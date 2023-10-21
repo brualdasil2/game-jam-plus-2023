@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvuf56ajlbbmq"]
+
+[ext_resource type="Texture2D" uid="uid://cprpcaimyo6eu" path="res://res/Galileu.png" id="1_k21ub"]
+[ext_resource type="Script" path="res://Galileo.gd" id="2_vl470"]
+
+[sub_resource type="Animation" id="Animation_n8w2d"]
+resource_name = "walk"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_icnnk"]
+_data = {
+"walk": SubResource("Animation_n8w2d")
+}
+
+[node name="Galileo" type="Sprite2D"]
+position = Vector2(7.62939e-06, 7.62939e-06)
+scale = Vector2(3.03125, 3.03125)
+texture = ExtResource("1_k21ub")
+script = ExtResource("2_vl470")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_icnnk")
+}
