@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=5 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
 [ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="2_pupr4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8osvs"]
+radius = 209.067
 
 [node name="Scope" type="Node2D"]
 script = ExtResource("1_7e5f4")
@@ -16,3 +19,11 @@ position = Vector2(570, 323)
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(388, 227)
 texture = ExtResource("2_pupr4")
+
+[node name="MouseCage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseCage"]
+position = Vector2(568, 323)
+shape = SubResource("CircleShape2D_8osvs")
+
+[connection signal="mouse_shape_exited" from="MouseCage" to="." method="_on_mouse_cage_mouse_shape_exited"]
