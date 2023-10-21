@@ -1,8 +1,11 @@
 extends Marker2D
 
-@export var MOUSE_SPEED = 150
-@export var MOUSE_ACCEL = 200
-@export var MOUSE_FRICTION = 100
+@export var MOUSE_SPEED = 10050
+@export var MOUSE_ACCEL = 1000
+@export var MOUSE_FRICTION = 1000
+@onready var rayleft = $pontoesq/RayCast2D
+@onready var rayright = $pontodir/RayCast2D
+@onready var mousecage = $MouseCage
 
 const MOVING_TRESHOLD = 0.1
 
@@ -26,9 +29,9 @@ func _physics_process(delta):
 	var mouse_pos : Vector2 = get_mouse_pos()
 	var mouse_direction : Vector2 = mouse_pos - prev_mouse_pos
 	if mouse_direction.length() > MOVING_TRESHOLD:
-		print_debug("MOVING" + str(mouse_direction))
-		print_debug("MPOS" + str(mouse_pos))
-		print_debug("MPREV" + str(prev_mouse_pos))
+		#print_debug("MOVING" + str(mouse_direction))
+	#	print_debug("MPOS" + str(mouse_pos))
+		#print_debug("MPREV" + str(prev_mouse_pos))
 		mouse_direction = mouse_direction.normalized()
 		velocity += MOUSE_ACCEL * delta * mouse_direction
 		if velocity.length() > MOUSE_SPEED:
@@ -37,26 +40,19 @@ func _physics_process(delta):
 		var op_dir : Vector2 = velocity.normalized() * -1
 		velocity += MOUSE_FRICTION * delta * op_dir
 	global_position += velocity * delta
+	pos_tests()
 	prev_mouse_pos = mouse_pos
 		
 func center_mouse():
 	Input.warp_mouse(get_viewport_rect().size / 2)
+	tpd = true
 
 func get_mouse_pos() -> Vector2:
 	return get_local_mouse_position()
 
+func pos_tests():
+	var mouse_pos = get_mouse_pos()
+	if mouse_pos.length()> 100:
+		center_mouse()
 
-func _on_mouse_cage_mouse_shape_exited(shape_idx):
-	return
-	prev_mouse_pos = get_viewport_rect().size/2
-	center_mouse()
-	tpd = true
-	print_debug("TPCENTER")
-
-
-func _on_area_2d_mouse_shape_entered(shape_idx):
-	return
-	prev_mouse_pos = get_viewport_rect().size/2
-	center_mouse()
-	tpd = true
-	print_debug("TPCENTER")
+	
