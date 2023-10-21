@@ -42,8 +42,12 @@ func _physics_process(delta):
 	pos_tests()
 	prev_mouse_pos = mouse_pos
 		
-
-		
+func go_to_house():
+	get_tree().change_scene_to_file("res://House.tscn")
+	
+func _process(delta):
+	if Input.is_action_just_pressed("right_click"):
+		go_to_house()
 
 func center_mouse():
 	Input.warp_mouse(get_viewport_rect().size / 2)
