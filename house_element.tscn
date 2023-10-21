@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://csmy27e4t648i"]
+
+[ext_resource type="Script" path="res://HouseElement.gd" id="1_6ipju"]
+
+[node name="HouseElement" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+icon_alignment = 1
+script = ExtResource("1_6ipju")
