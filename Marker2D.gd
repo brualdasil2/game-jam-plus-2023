@@ -12,7 +12,7 @@ var velocity : Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	center_mouse()
 	prev_mouse_pos = get_mouse_pos()
 
@@ -47,16 +47,9 @@ func get_mouse_pos() -> Vector2:
 
 
 func _on_mouse_cage_mouse_shape_exited(shape_idx):
-	return
 	prev_mouse_pos = get_viewport_rect().size/2
 	center_mouse()
 	tpd = true
 	print_debug("TPCENTER")
 
 
-func _on_area_2d_mouse_shape_entered(shape_idx):
-	return
-	prev_mouse_pos = get_viewport_rect().size/2
-	center_mouse()
-	tpd = true
-	print_debug("TPCENTER")
