@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0pukiwyrlyr8"]
+
+[ext_resource type="Script" path="res://scope_object.gd" id="1_0mnv8"]
+[ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="1_yus6r"]
+[ext_resource type="Script" path="res://ObjectArea.gd" id="3_ktveh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a6co3"]
+radius = 81.0247
+
+[node name="ScopeObject" type="Sprite2D"]
+texture = ExtResource("1_yus6r")
+script = ExtResource("1_0mnv8")
+
+[node name="ObjectArea" type="Area2D" parent="."]
+script = ExtResource("3_ktveh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectArea"]
+shape = SubResource("CircleShape2D_a6co3")
+
+[connection signal="area_entered" from="ObjectArea" to="." method="_on_area_2d_area_entered"]

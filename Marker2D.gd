@@ -13,9 +13,11 @@ var prev_mouse_pos : Vector2 = Vector2.ZERO
 var tpd : bool = false
 var velocity : Vector2 = Vector2.ZERO
 
+var curr_area
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	center_mouse()
 	prev_mouse_pos = get_mouse_pos()
 
@@ -29,9 +31,6 @@ func _physics_process(delta):
 	var mouse_pos : Vector2 = get_mouse_pos()
 	var mouse_direction : Vector2 = mouse_pos - prev_mouse_pos
 	if mouse_direction.length() > MOVING_TRESHOLD:
-		#print_debug("MOVING" + str(mouse_direction))
-	#	print_debug("MPOS" + str(mouse_pos))
-		#print_debug("MPREV" + str(prev_mouse_pos))
 		mouse_direction = mouse_direction.normalized()
 		velocity += MOUSE_ACCEL * delta * mouse_direction
 		if velocity.length() > MOUSE_SPEED:
@@ -43,6 +42,9 @@ func _physics_process(delta):
 	pos_tests()
 	prev_mouse_pos = mouse_pos
 		
+
+		
+
 func center_mouse():
 	Input.warp_mouse(get_viewport_rect().size / 2)
 	tpd = true
@@ -55,4 +57,22 @@ func pos_tests():
 	if mouse_pos.length()> 100:
 		center_mouse()
 
-	
+func _on_mouse_cage_mouse_shape_exited(shape_idx):
+	prev_mouse_pos = get_viewport_rect().size/2
+	center_mouse()
+	tpd = true
+
+
+
+
+
+func _on_crosshair_area_area_entered(area):
+	if not (area is ObjectArea):
+		return
+	curr_area = area
+	var parent = area.get_parent()
+	print_debug(parent.mission_id)
+
+
+func _on_crosshair_area_area_exited(area):
+	curr_area = 0
