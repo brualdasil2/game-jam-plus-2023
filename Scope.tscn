@@ -15,11 +15,11 @@ position = Vector2(597, 338)
 script = ExtResource("2_a512n")
 
 [node name="Camera2D" type="Camera2D" parent="Marker2D"]
+visible = false
 position = Vector2(1, 1)
 
 [node name="MouseCage" type="Area2D" parent="Marker2D"]
 position = Vector2(0, 1)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/MouseCage"]
 position = Vector2(3, 1.5)
