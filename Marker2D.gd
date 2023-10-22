@@ -10,7 +10,6 @@ extends CharacterBody2D
 @onready var rayright = $pontodir/RayCast2D
 @onready var mousecage = $MouseCage
 @onready var charge_progress = $Node2D/TextureProgressBar
-@onready var outPriest = $"../OutPriest"
 
 const MOVING_TRESHOLD = 0.1
 
@@ -54,10 +53,12 @@ func save_state():
 	ScopeState.scope_position = global_position
 	ScopeState.initialized = true
 
-func go_to_house():
+func go_to_house(cause):
 	save_state()
-	outPriest.save_state()
-	get_tree().change_scene_to_file("res://House.tscn")
+	if cause == "priest":
+		OutPriestState.priest_entering = true
+	get_parent().get_parent().load_house()
+	#get_tree().change_scene_to_file("res://House.tscn")
 	
 	
 func reset_charge():
@@ -95,12 +96,12 @@ func charge_find(delta):
 	if Missions.all_round_missions_done():
 		print_debug("ROUND DONE!")
 		Missions.curr_round += 1
-		go_to_house()
+		go_to_house("left")
 	reset_charge()
 	
 func _process(delta):
 	if Input.is_action_just_pressed("right_click"):
-		go_to_house()
+		go_to_house("left")
 	elif Input.is_action_pressed("left_click"):
 		charge_find(delta)
 	else:
@@ -139,4 +140,4 @@ func _on_crosshair_area_area_exited(area):
 
 
 func _on_out_priest_in_door():
-	go_to_house()
+	go_to_house("priest")

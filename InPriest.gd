@@ -1,22 +1,18 @@
 extends CharacterBody2D
 
+
 @onready var pos1 : Marker2D
 @onready var pos2 : Marker2D
-@onready var pos3 : Marker2D
-@onready var pos4 : Marker2D
-@onready var pos5 : Marker2D
+
 @onready var timer = $Timer
-@onready var knock = $"../KnockSound"
 
-@export var MIN_MOVE_SPEED = 50.0
-@export var MAX_MOVE_SPEED = 300.0
-@export var MIN_TIMER = 1.0
-@export var MAX_TIMER = 3.0
+@export var MOVE_SPEED = 50.0
+@export var TIMER = 3.0
 
-var move_speed = MIN_MOVE_SPEED
+var move_speed = MOVE_SPEED
 var target_pos : Vector2
 var target_pos_numb = 1
-var moving : bool = false
+var moving : bool = true
 var paused = false
 var on_door = false
 
@@ -106,8 +102,7 @@ func _on_timer_timeout():
 	print_debug("TIMER!")
 	moving = true
 	move_speed = randf_range(MIN_MOVE_SPEED, MAX_MOVE_SPEED)
-	#var pos = randi_range(1, 5)
-	var pos = 5
+	var pos = randi_range(1, 5)
 	while pos == target_pos_numb:
 		pos = randi_range(1, 5)
 	target_pos_numb = pos

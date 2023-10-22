@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Priest.gd" id="2_eis6c"]
 [ext_resource type="AudioStream" uid="uid://dnbapkxf82fku" path="res://res/porta.mp3" id="4_bjfqd"]
 
-[node name="OutPriest" type="Node2D"]
+[node name="OutPriest" type="Node2D" groups=["out_priest"]]
 process_mode = 3
 script = ExtResource("1_bg2c8")
 

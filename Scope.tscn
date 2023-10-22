@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=16 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://carg4q3dbounm" path="res://res/progress.png" id="5_m83l1"]
 [ext_resource type="Shader" path="res://blur.gdshader" id="7_fr2p1"]
 [ext_resource type="Texture2D" uid="uid://cliu4u1ev03vp" path="res://space.jpg" id="7_ultv7"]
-[ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="9_a043u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v06j8"]
 size = Vector2(278, 252)
@@ -30,10 +29,10 @@ size = Vector2(1740.05, 2880)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys588"]
 size = Vector2(6573, 1930)
 
-[node name="Scope" type="Node2D"]
+[node name="Scope" type="Node2D" groups=["priest_listener", "scope"]]
 script = ExtResource("1_7e5f4")
 
-[node name="Corsshair" type="CharacterBody2D" parent="."]
+[node name="Corsshair" type="CharacterBody2D" parent="." groups=["priest_listener"]]
 position = Vector2(597, 338)
 script = ExtResource("2_a512n")
 
@@ -130,9 +129,5 @@ unique_name_in_owner = true
 position = Vector2(560.5, -1185)
 shape = SubResource("RectangleShape2D_ys588")
 
-[node name="OutPriest" parent="." instance=ExtResource("9_a043u")]
-visible = false
-
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
-[connection signal="in_door" from="OutPriest" to="Corsshair" method="_on_out_priest_in_door"]
