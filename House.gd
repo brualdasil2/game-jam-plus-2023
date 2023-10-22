@@ -5,6 +5,7 @@ extends Node2D
 @onready var notebook = $Notebook
 @onready var scope = $Scope
 @onready var anim = $AnimationPlayer
+@onready var outPriest = $OutPriest
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,7 +41,7 @@ func save_state():
 	HouseState.galileo_pos = galileo.global_position
 	HouseState.galileo_flipped = galileo.flip_h
 	HouseState.initialized = true
-	print("SET HS INIT: " + str(HouseState.initialized))
+	outPriest.save_state()
 
 func open_scope():
 	save_state()

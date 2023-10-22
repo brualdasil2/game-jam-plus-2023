@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://Priest.gd" id="2_eis6c"]
 
 [node name="OutPriest" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_bg2c8")
 
 [node name="Priest" type="CharacterBody2D" parent="."]

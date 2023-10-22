@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var timer = $Timer
 
 @export var MIN_MOVE_SPEED = 50.0
-@export var MAX_MOVE_SPEED = 400.0
+@export var MAX_MOVE_SPEED = 300.0
 @export var MIN_TIMER = 1.0
 @export var MAX_TIMER = 3.0
 
@@ -28,6 +28,25 @@ func _ready():
 	pos3 = get_parent().get_node("./Pos3")
 	pos4 = get_parent().get_node("./Pos4")
 	pos5 = get_parent().get_node("./Pos5")
+	if OutPriestState.initialized:
+		print_debug("READY PRIEST INITING TO: " + str(OutPriestState.target_pos_numb))
+		move_speed = OutPriestState.move_speed
+		target_pos = OutPriestState.target_pos
+		target_pos_numb = OutPriestState.target_pos_numb
+		moving = OutPriestState.moving
+		paused = OutPriestState.paused
+		velocity = OutPriestState.velocity
+		global_position = OutPriestState.global_position
+	
+func save_state():
+	OutPriestState.move_speed = move_speed
+	OutPriestState.target_pos = target_pos
+	OutPriestState.target_pos_numb = target_pos_numb
+	OutPriestState.moving = moving
+	OutPriestState.paused = paused
+	OutPriestState.velocity = velocity
+	OutPriestState.global_position = global_position
+	OutPriestState.initialized = true
 	
 func reset():
 	target_pos_numb = 1

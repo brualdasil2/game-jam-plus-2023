@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 HouseState="*res://HouseState.gd"
 ScopeState="*res://ScopeState.gd"
 Missions="*res://Missions.gd"
+OutPriestState="*res://OutPriestState.gd"
 
 [display]
 

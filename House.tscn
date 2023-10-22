@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://3y6rlnyvjftm" path="res://res/altar.png" id="3_jp1xh"]
 [ext_resource type="Texture2D" uid="uid://cetbd7fm0coif" path="res://res/book open.png" id="4_uwuaw"]
 [ext_resource type="Texture2D" uid="uid://bw4ju23y4k4ec" path="res://res/telescope.png" id="5_b4ms7"]
-[ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="7_qse7h"]
 [ext_resource type="Texture2D" uid="uid://dc6h37f2lmiyp" path="res://res/door.png" id="9_3hq2q"]
+[ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="9_kr8kq"]
 
 [sub_resource type="Animation" id="Animation_ihhdg"]
 length = 0.001
@@ -161,7 +161,7 @@ position = Vector2(176, 421)
 scale = Vector2(4.95833, 4.95833)
 texture = ExtResource("9_3hq2q")
 
-[node name="OutPriest" parent="." instance=ExtResource("7_qse7h")]
+[node name="OutPriest" parent="." instance=ExtResource("9_kr8kq")]
 
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]
@@ -172,4 +172,3 @@ texture = ExtResource("9_3hq2q")
 [connection signal="mouse_entered" from="Scope" to="." method="_on_scope_mouse_entered"]
 [connection signal="mouse_exited" from="Scope" to="." method="_on_scope_mouse_exited"]
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
-[connection signal="in_door" from="OutPriest" to="." method="_on_out_priest_in_door"]
