@@ -1,6 +1,6 @@
 extends Node
 
-var curr_round = 1
+var curr_round = 2
 var max_rounds = 5
 var missions_status = {
 	1: {

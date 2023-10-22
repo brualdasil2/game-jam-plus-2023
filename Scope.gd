@@ -7,11 +7,15 @@ extends Node2D
 
 func _ready():
 	if Missions.curr_round >= 2:
-		a2.collision_layer = 8
+		a2.collision_layer = 0
+		a2.collision_mask = 0
 	if Missions.curr_round >= 3:
-		a3.collision_layer = 8
+		a3.collision_layer = 0
+		a3.collision_mask = 0
 	if Missions.curr_round >= 4:
-		a4.collision_layer = 8
+		a4.collision_layer = 0
+		a4.collision_mask = 0
 	if Missions.curr_round >= 5:
-		a5.collision_layer = 8
+		a5.collision_layer = 0
+		a5.collision_mask = 0
 	
