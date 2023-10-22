@@ -7,9 +7,7 @@ var missions_status = {
 		2: false
 	},
 	2: {
-		1: false,
-		2: false,
-		3: false
+		1: false
 	}
 }
 
