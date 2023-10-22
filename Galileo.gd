@@ -27,6 +27,8 @@ func play_animations():
 		anim.play("stand")
 	elif state in ["walking_to_reza", "walking_to_scope", "walking_to_notebook"]:
 		anim.play("walk")
+	elif state == "praying":
+		anim.play("pray")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
