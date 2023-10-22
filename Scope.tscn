@@ -71,6 +71,7 @@ motion_mirroring = Vector2(1200, 800)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 material = SubResource("ShaderMaterial_8o0ss")
+use_parent_material = true
 texture = ExtResource("7_ultv7")
 centered = false
 

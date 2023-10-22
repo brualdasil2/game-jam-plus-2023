@@ -50,7 +50,8 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Galileo" parent="." instance=ExtResource("1_fqx6u")]
-position = Vector2(713, 434)
+position = Vector2(933, 423)
+scale = Vector2(3.61719, 3.61719)
 
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]

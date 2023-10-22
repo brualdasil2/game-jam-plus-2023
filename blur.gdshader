@@ -1,4 +1,5 @@
 shader_type canvas_item;
+
 void fragment() {
     vec3 col = texture(TEXTURE, UV).xyz * 0.16;
     col += texture(TEXTURE, UV + vec2(TEXTURE_PIXEL_SIZE.x, 0.0)).xyz * 0.075;
