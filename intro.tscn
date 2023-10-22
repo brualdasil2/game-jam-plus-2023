@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cacq2ircp43l5"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_6qq48"]
-file = "intro.ogg"
+file = "intro.ogv"
 
 [node name="Intro" type="Node2D"]
 
