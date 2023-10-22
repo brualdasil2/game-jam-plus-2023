@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvpu0o3flg7cc"]
+
+[ext_resource type="Texture2D" uid="uid://cl2fr1a32fu12" path="res://res/WalkPadre.png" id="1_6ycdo"]
+[ext_resource type="Script" path="res://Priest.gd" id="2_eis6c"]
+
+[node name="Priest" type="CharacterBody2D"]
+z_index = -20
+script = ExtResource("2_eis6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -1)
+scale = Vector2(3.02344, 3.02344)
+texture = ExtResource("1_6ycdo")
+flip_h = true
+hframes = 2
+vframes = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

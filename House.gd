@@ -4,6 +4,7 @@ extends Node2D
 @onready var reza = $Reza
 @onready var notebook = $Notebook
 @onready var scope = $Scope
+@onready var anim = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 		galileo.global_position = HouseState.galileo_pos
 		galileo.flip_h = HouseState.galileo_flipped
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	anim.play("closed")
 
 func _physics_process(delta):
 	match galileo.state:
@@ -89,3 +91,8 @@ func _on_notebook_mouse_entered():
 func _on_notebook_mouse_exited():
 	notebook.icon = load("res://res/book open.png")
 	pass # Replace with function body.
+
+
+func _on_priest_in_door():
+	print_debug("PRIEST IN DOOR!!!!!!!!!!")
+	anim.play("open")

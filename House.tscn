@@ -1,11 +1,104 @@
-[gd_scene load_steps=7 format=3 uid="uid://c01v3icnohflb"]
+[gd_scene load_steps=14 format=3 uid="uid://c01v3icnohflb"]
 
 [ext_resource type="Script" path="res://House.gd" id="1_c4gxq"]
 [ext_resource type="PackedScene" uid="uid://bvuf56ajlbbmq" path="res://Galileo.tscn" id="1_fqx6u"]
 [ext_resource type="Texture2D" uid="uid://3o5r1n33um63" path="res://res/background.png" id="2_xuda8"]
+[ext_resource type="Texture2D" uid="uid://ucowm6jpxegw" path="res://res/background_open.png" id="3_cqo4m"]
 [ext_resource type="Texture2D" uid="uid://3y6rlnyvjftm" path="res://res/altar.png" id="3_jp1xh"]
 [ext_resource type="Texture2D" uid="uid://cetbd7fm0coif" path="res://res/book open.png" id="4_uwuaw"]
 [ext_resource type="Texture2D" uid="uid://bw4ju23y4k4ec" path="res://res/telescope.png" id="5_b4ms7"]
+[ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="7_qse7h"]
+[ext_resource type="Texture2D" uid="uid://dc6h37f2lmiyp" path="res://res/door.png" id="9_3hq2q"]
+
+[sub_resource type="Animation" id="Animation_45qo5"]
+resource_name = "closed"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xuda8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ihhdg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_xuda8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2nrsb"]
+resource_name = "open"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_cqo4m")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wajw"]
+_data = {
+"RESET": SubResource("Animation_ihhdg"),
+"closed": SubResource("Animation_45qo5"),
+"open": SubResource("Animation_2nrsb")
+}
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_c4gxq")
@@ -52,6 +145,40 @@ expand_icon = true
 [node name="Galileo" parent="." instance=ExtResource("1_fqx6u")]
 position = Vector2(713, 434)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(166, 308)
+zoom = Vector2(0.53, 0.53)
+
+[node name="Pos1" type="Marker2D" parent="."]
+position = Vector2(-835, 513)
+
+[node name="Pos2" type="Marker2D" parent="."]
+position = Vector2(-618, 513)
+
+[node name="Pos3" type="Marker2D" parent="."]
+position = Vector2(-346, 513)
+
+[node name="Pos4" type="Marker2D" parent="."]
+position = Vector2(-42, 514)
+
+[node name="Pos5" type="Marker2D" parent="."]
+position = Vector2(34, 513)
+
+[node name="Priest" parent="." instance=ExtResource("7_qse7h")]
+position = Vector2(-833, 514)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0wajw")
+}
+
+[node name="Door" type="Sprite2D" parent="."]
+visible = false
+z_index = 20
+position = Vector2(176, 421)
+scale = Vector2(4.95833, 4.95833)
+texture = ExtResource("9_3hq2q")
+
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]
 [connection signal="pressed" from="Reza" to="." method="_on_reza_pressed"]
@@ -61,3 +188,4 @@ position = Vector2(713, 434)
 [connection signal="mouse_entered" from="Scope" to="." method="_on_scope_mouse_entered"]
 [connection signal="mouse_exited" from="Scope" to="." method="_on_scope_mouse_exited"]
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
+[connection signal="in_door" from="Priest" to="." method="_on_priest_in_door"]
