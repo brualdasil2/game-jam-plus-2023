@@ -46,7 +46,7 @@ func open_scope():
 
 func _on_reza_pressed():
 	galileo.state = "walking_to_reza"
-	galileo.target_x = reza.global_position.x
+	galileo.target_x = reza.global_position.x + 85
 
 
 func _on_notebook_pressed():
