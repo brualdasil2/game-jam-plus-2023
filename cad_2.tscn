@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpf4qlmq1xpyt"]
+
+[ext_resource type="Texture2D" uid="uid://7pt0gqrklvrs" path="res://res/cad2.png" id="1_1rd2r"]
+[ext_resource type="Script" path="res://cad.gd" id="1_k33hu"]
+
+[node name="Cad2" type="Node2D" groups=["notebook"]]
+script = ExtResource("1_k33hu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_1rd2r")
+centered = false

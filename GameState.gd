@@ -34,7 +34,6 @@ func load_game_over():
 
 func load_notebook():
 	remove_scene("house")
-	match Missions.curr_round:
-		1:
-			add_child(load("res://cad_1.tscn").instantiate())
+	var curr_round = Missions.curr_round
+	add_child(load("res://cad_" + str(curr_round) + ".tscn").instantiate())
 		

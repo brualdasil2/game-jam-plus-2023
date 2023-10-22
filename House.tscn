@@ -196,10 +196,6 @@ expand_icon = true
 [node name="Galileo" parent="." instance=ExtResource("1_fqx6u")]
 position = Vector2(713, 434)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(166, 308)
-zoom = Vector2(0.53, 0.53)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0wajw")
