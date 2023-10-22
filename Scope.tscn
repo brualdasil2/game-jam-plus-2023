@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=74 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cvxabio4rkjm8" path="res://res/space/venus.png" id="7_uc4xc"]
 [ext_resource type="Texture2D" uid="uid://cliu4u1ev03vp" path="res://space.jpg" id="7_ultv7"]
 [ext_resource type="Texture2D" uid="uid://dhl3p1gcsys77" path="res://res/space/saturn.png" id="8_ff1nh"]
-[ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="9_a043u"]
 [ext_resource type="Texture2D" uid="uid://dwuhyo8xbb747" path="res://res/space/Yellow Asteroid.png" id="10_afwr4"]
 [ext_resource type="Texture2D" uid="uid://b4c4adwc0vwx7" path="res://res/space/plannets5.png" id="11_24t37"]
 [ext_resource type="Texture2D" uid="uid://bh601x57hqc3d" path="res://res/space/Planetet.png" id="12_gkk43"]
@@ -33,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://cs3driblpa6io" path="res://res/space/Green Asteroid 2.png" id="21_iigka"]
 [ext_resource type="Texture2D" uid="uid://bg6luimhgxjar" path="res://res/space/Asteroid2.png" id="22_d05ov"]
 [ext_resource type="Texture2D" uid="uid://bqjkgkv2efefl" path="res://res/space/plannets2.png" id="23_3unkf"]
+[ext_resource type="AudioStream" uid="uid://dk0qj2nq5ogfe" path="res://res/certo.wav" id="30_5rem4"]
+[ext_resource type="AudioStream" uid="uid://c40fan2xslwqu" path="res://res/errado.wav" id="31_0wc60"]
 [ext_resource type="Texture2D" uid="uid://q4r0pq2ygdem" path="res://res/space/1-star.png" id="34_i6xce"]
 [ext_resource type="Texture2D" uid="uid://b5rgp574g02re" path="res://res/space/5-star.png" id="35_t6bpw"]
 
@@ -111,8 +112,8 @@ radius = 6.67246
 [sub_resource type="CircleShape2D" id="CircleShape2D_6hjo3"]
 radius = 6.42358
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v06j8"]
-size = Vector2(278, 252)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75p1v"]
+size = Vector2(398, 378)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmsoo"]
 
@@ -154,7 +155,7 @@ shader_parameter/intensity = 8.825
 shader_parameter/opacity = 1.265
 shader_parameter/glow_color = Color(1, 1, 1, 1)
 
-[node name="Scope" type="Node2D"]
+[node name="Scope" type="Node2D" groups=["priest_listener", "scope"]]
 script = ExtResource("1_7e5f4")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -679,10 +680,9 @@ script = ExtResource("2_a512n")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corsshair"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_v06j8")
-debug_color = Color(0.737255, 0.396078, 0.65098, 0.419608)
-metadata/_edit_lock_ = true
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_75p1v")
+debug_color = Color(0.701961, 0.294118, 0.976471, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="Corsshair"]
 z_index = 10
@@ -715,6 +715,19 @@ offset_bottom = 269.94
 value = 100.0
 fill_mode = 4
 texture_progress = ExtResource("5_m83l1")
+metadata/_edit_lock_ = true
+
+[node name="Certosound" type="AudioStreamPlayer" parent="Corsshair"]
+stream = ExtResource("30_5rem4")
+volume_db = 8.0
+
+[node name="ErradoSound" type="AudioStreamPlayer" parent="Corsshair"]
+stream = ExtResource("31_0wc60")
+volume_db = 5.143
+
+[node name="Corsshair2" type="CharacterBody2D" parent="." groups=["priest_listener"]]
+visible = false
+position = Vector2(0, 1)
 metadata/_edit_lock_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -803,9 +816,6 @@ self_modulate = Color(0.0431373, 0, 0.458824, 0.215686)
 position = Vector2(789, -1995.5)
 scale = Vector2(8888, 3577)
 texture = SubResource("CanvasTexture_uobfq")
-
-[node name="OutPriest" parent="." instance=ExtResource("9_a043u")]
-visible = false
 
 [node name="OuterBound" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -1245,7 +1255,6 @@ texture = ExtResource("35_t6bpw")
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
-[connection signal="in_door" from="OutPriest" to="Corsshair" method="_on_out_priest_in_door"]
 
 [editable path="Node2D/Yellow Moon"]
 [editable path="Node2D/White Planet"]

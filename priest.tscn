@@ -1,19 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvpu0o3flg7cc"]
+[gd_scene load_steps=6 format=3 uid="uid://dvpu0o3flg7cc"]
 
 [ext_resource type="Texture2D" uid="uid://cl2fr1a32fu12" path="res://res/WalkPadre.png" id="1_6ycdo"]
 [ext_resource type="Script" path="res://OutPriest.gd" id="1_bg2c8"]
 [ext_resource type="Script" path="res://Priest.gd" id="2_eis6c"]
 [ext_resource type="AudioStream" uid="uid://dnbapkxf82fku" path="res://res/porta.mp3" id="4_bjfqd"]
+[ext_resource type="AudioStream" uid="uid://dpbsil0wh5kg4" path="res://res/passos.wav" id="5_j1kxf"]
 
-[node name="OutPriest" type="Node2D"]
+[node name="OutPriest" type="Node2D" groups=["out_priest"]]
 process_mode = 3
+visible = false
+z_index = -100
 script = ExtResource("1_bg2c8")
 
 [node name="Priest" type="CharacterBody2D" parent="."]
 z_index = -20
 position = Vector2(-844, 512)
 script = ExtResource("2_eis6c")
-metadata/_edit_group_ = true
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="Priest"]
+position = Vector2(-8, 19)
+stream = ExtResource("5_j1kxf")
+volume_db = 15.406
+max_distance = 1500.0
+attenuation = 2.63902
 
 [node name="Sprite2D" type="Sprite2D" parent="Priest"]
 position = Vector2(1.90735e-06, -1)
@@ -43,7 +52,13 @@ position = Vector2(-42, 514)
 position = Vector2(34, 513)
 
 [node name="KnockSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(599, 463)
 stream = ExtResource("4_bjfqd")
+volume_db = 9.509
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(38, 511)
+current = true
 
 [connection signal="in_door" from="Priest" to="." method="_on_priest_in_door"]
 [connection signal="timeout" from="Priest/Timer" to="Priest" method="_on_timer_timeout"]

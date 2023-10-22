@@ -7,12 +7,15 @@ class_name Galileo
 
 var state = "standing"
 var target_x = 0.0
+var frozen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func walk_to_target(delta):
+	if frozen:
+		return
 	if target_x > global_position.x:
 		flip_h = true
 	else:
@@ -23,7 +26,9 @@ func is_on_target():
 	return global_position.x == target_x
 
 func play_animations():
-	if state == "standing":
+	if frozen:
+		anim.play("stand")
+	elif state == "standing":
 		anim.play("stand")
 	elif state in ["walking_to_reza", "walking_to_scope", "walking_to_notebook"]:
 		anim.play("walk")

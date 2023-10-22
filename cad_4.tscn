@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfj2csv6ivkk7"]
+
+[ext_resource type="Script" path="res://cad.gd" id="1_kaufw"]
+[ext_resource type="Texture2D" uid="uid://1hjb6tsvohh2" path="res://res/cad4.png" id="1_nu4rd"]
+[ext_resource type="PackedScene" uid="uid://1xxvq7y5mt1e" path="res://check.tscn" id="3_bmltj"]
+
+[node name="Cad4" type="Node2D" groups=["notebook"]]
+script = ExtResource("1_kaufw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_nu4rd")
+centered = false
+
+[node name="Check" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(176, 392)
+scale = Vector2(5.6875, 5.6875)
+mission_id = 2
+round = 4
+
+[node name="Check3" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(706, 263)
+scale = Vector2(5.6875, 5.6875)
+mission_id = 1
+round = 4
+
+[node name="Check4" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(831, 361)
+scale = Vector2(4.71874, 4.71874)
+mission_id = 3
+round = 4
+
+[node name="Check5" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(962.25, 210.25)
+scale = Vector2(4.71875, 4.71875)
+mission_id = 5
+round = 4
+
+[node name="Check6" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(1030, 339)
+scale = Vector2(4.90625, 4.90625)
+mission_id = 4
+round = 4
+
+[node name="Check2" parent="." instance=ExtResource("3_bmltj")]
+position = Vector2(450, 254)
+scale = Vector2(8.59375, 8.59375)
+mission_id = 6
+round = 4

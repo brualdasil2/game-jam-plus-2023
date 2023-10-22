@@ -8,3 +8,6 @@ var moving : bool
 var paused : bool
 var velocity : Vector2
 var global_position : Vector2
+var on_door : bool
+
+var priest_entering : bool = false

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cacq2ircp43l5"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_6qq48"]
+file = "intro.ogg"
+
+[node name="Intro" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_6qq48")
+autoplay = true

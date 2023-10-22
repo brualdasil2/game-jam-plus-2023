@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bllr2jcdv6osc"]
+
+[ext_resource type="Texture2D" uid="uid://cabqyiro1ht2x" path="res://res/winscreen.png" id="1_didym"]
+[ext_resource type="AudioStream" uid="uid://dyvj5kl5dencx" path="res://res/win.wav" id="2_vsxl7"]
+
+[node name="Win" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.24815, 1.24815)
+texture = ExtResource("1_didym")
+centered = false
+
+[node name="winsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vsxl7")
+volume_db = 8.571
+autoplay = true
