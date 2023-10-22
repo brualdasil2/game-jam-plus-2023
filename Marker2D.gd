@@ -3,6 +3,9 @@ extends Marker2D
 @export var MOUSE_SPEED = 10050
 @export var MOUSE_ACCEL = 1000
 @export var MOUSE_FRICTION = 1000
+
+@export var FIND_TIME = 1.0
+
 @onready var rayleft = $pontoesq/RayCast2D
 @onready var rayright = $pontodir/RayCast2D
 @onready var mousecage = $MouseCage
@@ -12,8 +15,10 @@ const MOVING_TRESHOLD = 0.1
 var prev_mouse_pos : Vector2 = Vector2.ZERO
 var tpd : bool = false
 var velocity : Vector2 = Vector2.ZERO
+var find_charge = 0.0
+var charge_blocked = false
 
-var curr_area
+var curr_area : ScopeObject
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,9 +57,36 @@ func go_to_house():
 	save_state()
 	get_tree().change_scene_to_file("res://House.tscn")
 	
+	
+func reset_charge():
+	find_charge = 0.0
+	charge_blocked = true
+	
+func charge_find(delta):
+	if charge_blocked:
+		return
+	find_charge += delta
+	if find_charge <= FIND_TIME:
+		return
+	if curr_area == null:
+		print_debug("ERROR! No planet found")
+		reset_charge()
+		return
+	# TODO: test curr round
+	
+	print_debug("FOUND PLANET " + str(curr_area.mission_id))
+	reset_charge()
+	
 func _process(delta):
 	if Input.is_action_just_pressed("right_click"):
 		go_to_house()
+	elif Input.is_action_pressed("left_click"):
+		charge_find(delta)
+	else:
+		find_charge = 0.0
+		charge_blocked = false
+	print_debug(find_charge)
+		
 
 func center_mouse():
 	Input.warp_mouse(get_viewport_rect().size / 2)
@@ -77,10 +109,9 @@ func _on_mouse_cage_mouse_shape_exited(shape_idx):
 func _on_crosshair_area_area_entered(area):
 	if not (area is ObjectArea):
 		return
-	curr_area = area
-	var parent = area.get_parent()
-	print_debug(parent.mission_id)
+	curr_area = area.get_parent()
+	
 
 
 func _on_crosshair_area_area_exited(area):
-	curr_area = 0
+	curr_area = null

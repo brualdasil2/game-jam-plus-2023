@@ -1,16 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=7 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
 [ext_resource type="Script" path="res://crosshairArea.gd" id="3_0d0rv"]
 [ext_resource type="PackedScene" uid="uid://b0pukiwyrlyr8" path="res://scope_object.tscn" id="3_hwrwc"]
+[ext_resource type="Texture2D" uid="uid://cf0v1rxlltbsp" path="res://res/mira.png" id="4_hbv6h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmsoo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnwax"]
-size = Vector2(1172, 651)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_b2bx0"]
 
 [node name="Scope" type="Node2D"]
 script = ExtResource("1_7e5f4")
@@ -18,6 +14,11 @@ script = ExtResource("1_7e5f4")
 [node name="Corsshair" type="Marker2D" parent="."]
 position = Vector2(597, 338)
 script = ExtResource("2_a512n")
+
+[node name="Sprite2D" type="Sprite2D" parent="Corsshair"]
+z_index = 10
+scale = Vector2(0.622007, 0.622007)
+texture = ExtResource("4_hbv6h")
 
 [node name="CrosshairArea" type="Area2D" parent="Corsshair"]
 script = ExtResource("3_0d0rv")
@@ -27,16 +28,6 @@ shape = SubResource("CircleShape2D_xmsoo")
 
 [node name="Camera2D" type="Camera2D" parent="Corsshair"]
 position = Vector2(1, 1)
-
-[node name="MouseCage" type="Area2D" parent="Corsshair"]
-position = Vector2(0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Corsshair/MouseCage"]
-position = Vector2(3, 1.5)
-shape = SubResource("RectangleShape2D_cnwax")
-
-[node name="Sprite2D" type="Sprite2D" parent="Corsshair"]
-texture = SubResource("CanvasTexture_b2bx0")
 
 [node name="ScopeObject" parent="." instance=ExtResource("3_hwrwc")]
 position = Vector2(308, 260)
@@ -50,4 +41,3 @@ round = 2
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
-[connection signal="mouse_shape_exited" from="Corsshair/MouseCage" to="Corsshair" method="_on_mouse_cage_mouse_shape_exited"]
