@@ -1,16 +1,112 @@
-[gd_scene load_steps=16 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=62 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
 [ext_resource type="Script" path="res://crosshairArea.gd" id="3_0d0rv"]
+[ext_resource type="Texture2D" uid="uid://dwfccpyog6xu" path="res://res/space/yellow planet.png" id="3_ade04"]
 [ext_resource type="PackedScene" uid="uid://b0pukiwyrlyr8" path="res://scope_object.tscn" id="3_hwrwc"]
 [ext_resource type="Texture2D" uid="uid://cf0v1rxlltbsp" path="res://res/mira.png" id="4_hbv6h"]
+[ext_resource type="Texture2D" uid="uid://c7oo66fk0kwc2" path="res://res/space/plannets0.png" id="4_uvwwy"]
 [ext_resource type="Texture2D" uid="uid://carg4q3dbounm" path="res://res/progress.png" id="5_m83l1"]
+[ext_resource type="Texture2D" uid="uid://0nt7hv42ewtw" path="res://res/space/Jupiter.png" id="6_afgq7"]
+[ext_resource type="Texture2D" uid="uid://tcdtymitusje" path="res://res/space/constelacoes.png" id="6_ggyfo"]
+[ext_resource type="Shader" path="res://glow.gdshader" id="6_hjob6"]
+[ext_resource type="Texture2D" uid="uid://c0csm6a73w5dy" path="res://res/space/blue planet.png" id="6_vvl1x"]
+[ext_resource type="Texture2D" uid="uid://dsx6iig8g0paj" path="res://res/space/via_Lactea.png" id="6_vyors"]
 [ext_resource type="Shader" path="res://blur.gdshader" id="7_fr2p1"]
+[ext_resource type="Texture2D" uid="uid://c4mkoyp7q22ie" path="res://res/space/Moon.png" id="7_pe06s"]
+[ext_resource type="Texture2D" uid="uid://cvxabio4rkjm8" path="res://res/space/venus.png" id="7_uc4xc"]
 [ext_resource type="Texture2D" uid="uid://cliu4u1ev03vp" path="res://space.jpg" id="7_ultv7"]
+[ext_resource type="Texture2D" uid="uid://dhl3p1gcsys77" path="res://res/space/saturn.png" id="8_ff1nh"]
+[ext_resource type="Texture2D" uid="uid://dwuhyo8xbb747" path="res://res/space/Yellow Asteroid.png" id="10_afwr4"]
+[ext_resource type="Texture2D" uid="uid://b4c4adwc0vwx7" path="res://res/space/plannets5.png" id="11_24t37"]
+[ext_resource type="Texture2D" uid="uid://bh601x57hqc3d" path="res://res/space/Planetet.png" id="12_gkk43"]
+[ext_resource type="Texture2D" uid="uid://c0j5r7ayfwfh7" path="res://res/space/chesse planet.png" id="13_6hags"]
+[ext_resource type="Texture2D" uid="uid://ceigexp1ev7k1" path="res://res/space/Asteroid.png" id="14_1bcrm"]
+[ext_resource type="Texture2D" uid="uid://0lhccarn31qm" path="res://res/space/plannets4.png" id="15_a46nv"]
+[ext_resource type="Texture2D" uid="uid://d2hnjvp8i1121" path="res://res/space/plannets1.png" id="16_x018h"]
+[ext_resource type="Texture2D" uid="uid://cgoplb8464lxk" path="res://res/space/green planet.png" id="17_108ma"]
+[ext_resource type="Texture2D" uid="uid://jxy5a43edwth" path="res://res/space/plannets3.png" id="18_wicy7"]
+[ext_resource type="Texture2D" uid="uid://bhtrbw2e4eg5j" path="res://res/space/Blue  Asteroid.png" id="19_j7wcr"]
+[ext_resource type="Texture2D" uid="uid://cuawjrofsbxf2" path="res://res/space/Green Asteroid.png" id="20_oftmi"]
+[ext_resource type="Texture2D" uid="uid://cs3driblpa6io" path="res://res/space/Green Asteroid 2.png" id="21_iigka"]
+[ext_resource type="Texture2D" uid="uid://bg6luimhgxjar" path="res://res/space/Asteroid2.png" id="22_d05ov"]
+[ext_resource type="Texture2D" uid="uid://bqjkgkv2efefl" path="res://res/space/plannets2.png" id="23_3unkf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v06j8"]
-size = Vector2(278, 252)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccxcv"]
+radius = 8.01776
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsxhr"]
+radius = 6.50123
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_om1l8"]
+radius = 14.8544
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yksfe"]
+shader = ExtResource("6_hjob6")
+shader_parameter/color1 = Color(0.913725, 0.968627, 0.972549, 1)
+shader_parameter/color2 = Color(0.913725, 0.968627, 0.972549, 1)
+shader_parameter/threshold = 1.01
+shader_parameter/intensity = 1.955
+shader_parameter/opacity = 0.1
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq2jy"]
+radius = 19.8448
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa358"]
+radius = 20.7303
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jpax"]
+radius = 19.7569
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r8xox"]
+radius = 23.9275
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6rmp"]
+radius = 27.6817
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_607ye"]
+radius = 27.6817
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxehh"]
+radius = 21.9031
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5kcg"]
+radius = 39.9914
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7f4y"]
+radius = 39.9914
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxdxf"]
+radius = 71.696
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kefvf"]
+radius = 8.21327
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_revph"]
+radius = 14.24
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh87k"]
+radius = 6.45617
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ycs6i"]
+radius = 8.08634
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njx8p"]
+radius = 6.15364
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_04olu"]
+radius = 5.63855
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_848fu"]
+radius = 7.03635
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tw2n"]
+radius = 6.67246
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hjo3"]
+radius = 6.42358
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmsoo"]
 
@@ -32,31 +128,528 @@ size = Vector2(6573, 1930)
 [node name="Scope" type="Node2D" groups=["priest_listener", "scope"]]
 script = ExtResource("1_7e5f4")
 
-[node name="Corsshair" type="CharacterBody2D" parent="." groups=["priest_listener"]]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Yellow Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-119, -1315)
+scale = Vector2(24.7656, 24.7656)
+texture = ExtResource("3_ade04")
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Yellow Moon" index="0"]
+metadata/_edit_group_ = true
+
+[node name="White Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(1246.5, 68.5002)
+scale = Vector2(14.3125, 14.3125)
+texture = ExtResource("4_uvwwy")
+mission_id = 3
+round = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/White Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ccxcv")
+
+[node name="Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-563, 846)
+scale = Vector2(28.375, 28.375)
+texture = ExtResource("7_pe06s")
+mission_id = 4
+round = 1
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Moon/ObjectArea" index="0"]
+position = Vector2(-0.220184, 0.366974)
+scale = Vector2(-1.13413, 1.12945)
+shape = SubResource("CircleShape2D_wsxhr")
+
+[node name="jupiter" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(3283, 1255)
+scale = Vector2(22.5625, 21.7187)
+texture = ExtResource("6_afgq7")
+mission_id = 5
+round = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/jupiter/ObjectArea" index="0"]
+position = Vector2(1.34796, -0.586082)
+scale = Vector2(-1.13413, 1.12945)
+shape = SubResource("CircleShape2D_om1l8")
+
+[node name="Touro" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-2222, 130)
+scale = Vector2(10.4033, 9.94156)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 1
+mission_id = 2
+round = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Touro/ObjectArea" index="0"]
+position = Vector2(-1.61633, 9.54208)
+rotation = -0.846996
+scale = Vector2(-0.472406, 1.38126)
+shape = SubResource("CircleShape2D_eq2jy")
+
+[node name="Const" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(1895, 587)
+scale = Vector2(9.60352, 9.17725)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 3
+mission_id = 2
+round = 1
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const/ObjectArea" index="0"]
+position = Vector2(-25.6366, -21.3764)
+rotation = -0.846996
+scale = Vector2(-0.472406, 1.06378)
+shape = SubResource("CircleShape2D_eq2jy")
+
+[node name="Const2" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-80.1563, 343.234)
+scale = Vector2(10.1299, 9.76313)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 4
+mission_id = 1
+round = 1
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const2" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const2/ObjectArea" index="0"]
+position = Vector2(-25.1447, -25.3226)
+rotation = -0.846996
+scale = Vector2(-0.333512, 0.749304)
+shape = SubResource("CircleShape2D_wa358")
+
+[node name="Const3" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-263.578, 2109.66)
+scale = Vector2(11.6743, 11.1561)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 7
+mission_id = 2
+round = 2
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const3" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const3/ObjectArea" index="0"]
+position = Vector2(-17.5752, 6.55905)
+rotation = -0.846996
+scale = Vector2(-1.15124, 0.676849)
+shape = SubResource("CircleShape2D_eq2jy")
+
+[node name="Const4" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(786, 700)
+scale = Vector2(11.2837, 10.7829)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 9
+mission_id = 3
+round = 1
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const4" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const4/ObjectArea" index="0"]
+position = Vector2(-15.5354, 9.68837)
+rotation = -0.695193
+scale = Vector2(-1.29191, 0.718883)
+shape = SubResource("CircleShape2D_4jpax")
+
+[node name="Const5" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(3291, 2153)
+scale = Vector2(10.9111, 10.4268)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 11
+mission_id = 1
+round = 3
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const5" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const5/ObjectArea" index="0"]
+position = Vector2(-10.6268, -2.27748)
+rotation = -0.976918
+scale = Vector2(-1.29191, 0.961873)
+shape = SubResource("CircleShape2D_r8xox")
+
+[node name="Const6" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(2208.29, -460.765)
+scale = Vector2(12.4778, 11.9239)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 13
+mission_id = 1
+round = 5
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const6" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const6/ObjectArea" index="0"]
+position = Vector2(-11.4395, -4.10548)
+rotation = -1.57277
+scale = Vector2(-1.16056, -0.987917)
+shape = SubResource("CircleShape2D_m6rmp")
+
+[node name="Const7" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(953.105, 1675.05)
+scale = Vector2(8.65296, 8.26889)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 15
+mission_id = 1
+round = 2
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const7" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const7/ObjectArea" index="0"]
+position = Vector2(-9.21288, -6.93329)
+rotation = -0.772567
+scale = Vector2(-1.49201, -0.800962)
+shape = SubResource("CircleShape2D_607ye")
+
+[node name="Const8" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-1917.34, 2134.52)
+scale = Vector2(12.6668, 12.1046)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 17
+mission_id = 1
+round = 4
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const8" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const8/ObjectArea" index="0"]
+position = Vector2(-17.6547, -0.938782)
+rotation = -0.772567
+scale = Vector2(-0.836652, -0.800962)
+shape = SubResource("CircleShape2D_vxehh")
+
+[node name="Const9" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-1390.33, -1700.71)
+scale = Vector2(11.1148, 10.6215)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 19
+mission_id = 3
+round = 5
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const9" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const9/ObjectArea" index="0"]
+position = Vector2(-5.28222, -4.7702)
+rotation = -0.772567
+scale = Vector2(-0.918878, -0.500062)
+shape = SubResource("CircleShape2D_j5kcg")
+
+[node name="Const10" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(2634.66, 622.988)
+scale = Vector2(11.573, 11.0594)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 21
+mission_id = 2
+round = 3
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const10" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const10/ObjectArea" index="0"]
+position = Vector2(-4.4776, -12.1796)
+rotation = -0.772567
+scale = Vector2(-0.536114, 0.676505)
+shape = SubResource("CircleShape2D_r7f4y")
+
+[node name="Const11" parent="Node2D" instance=ExtResource("3_hwrwc")]
+material = SubResource("ShaderMaterial_yksfe")
+position = Vector2(-813.169, -248.262)
+scale = Vector2(11.974, 11.4425)
+texture = ExtResource("6_ggyfo")
+hframes = 5
+vframes = 5
+frame = 23
+mission_id = 2
+round = 5
+metadata/_edit_group_ = true
+
+[node name="ObjectArea" parent="Node2D/Const11" index="0"]
+position = Vector2(6.24388, 5.54766)
+
+[node name="CollisionShape2D" parent="Node2D/Const11/ObjectArea" index="0"]
+position = Vector2(-6.89618, -15.253)
+rotation = -0.772567
+scale = Vector2(-0.495827, 0.409909)
+shape = SubResource("CircleShape2D_yxdxf")
+
+[node name="Via Leite" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(2750, -1691)
+scale = Vector2(36.7422, 36.7422)
+texture = ExtResource("6_vyors")
+mission_id = 10
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Via Leite/ObjectArea" index="0"]
+position = Vector2(-0.965706, 0.965706)
+rotation = -0.165349
+scale = Vector2(-1.51163, 0.910852)
+shape = SubResource("CircleShape2D_kefvf")
+
+[node name="Venus" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(1583.75, 2287.25)
+scale = Vector2(34.3438, 34.3438)
+texture = ExtResource("7_uc4xc")
+mission_id = 4
+round = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Venus/ObjectArea" index="0"]
+position = Vector2(-0.220184, 0.366974)
+scale = Vector2(-1.13413, 1.12945)
+shape = SubResource("CircleShape2D_wsxhr")
+
+[node name="Saturn" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-2316, 1486)
+scale = Vector2(30.5469, 21.0614)
+texture = ExtResource("8_ff1nh")
+mission_id = 6
+round = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Saturn/ObjectArea" index="0"]
+position = Vector2(-1.57693, -1.29971)
+rotation = -2.8393
+scale = Vector2(-0.469768, 1.25794)
+shape = SubResource("CircleShape2D_revph")
+
+[node name="Blue Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(1936, 957)
+scale = Vector2(8, 8)
+texture = ExtResource("6_vvl1x")
+mission_id = 4
+round = 4
+
+[node name="Yello Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-2224, -496)
+scale = Vector2(18, 18)
+texture = ExtResource("10_afwr4")
+mission_id = 5
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Yello Asteroid/ObjectArea" index="0"]
+position = Vector2(0.555557, -0.222223)
+shape = SubResource("CircleShape2D_kh87k")
+
+[node name="Pink Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-1386, 351)
+scale = Vector2(18, 18)
+texture = ExtResource("11_24t37")
+mission_id = 5
+round = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Pink Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Rocky Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-1616, 1058)
+scale = Vector2(18, 18)
+texture = ExtResource("12_gkk43")
+mission_id = 9
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Rocky Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Chesse Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-1522, -654)
+scale = Vector2(23.625, 23.625)
+texture = ExtResource("13_6hags")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Chesse Moon/ObjectArea" index="0"]
+position = Vector2(-0.611115, 1.38889)
+shape = SubResource("CircleShape2D_njx8p")
+
+[node name="Basic Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-1449, 1770)
+scale = Vector2(18.375, 18.375)
+texture = ExtResource("14_1bcrm")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Basic Asteroid/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Orange Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-214, 1373.5)
+scale = Vector2(14.875, 15.3125)
+texture = ExtResource("15_a46nv")
+mission_id = 3
+round = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Orange Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Big Blue" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(474, 2252)
+scale = Vector2(19.0625, 19.0625)
+texture = ExtResource("16_x018h")
+mission_id = 2
+round = 4
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Big Blue/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Green Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(1743.5, 1621.5)
+scale = Vector2(13.9375, 13.9375)
+texture = ExtResource("17_108ma")
+mission_id = 8
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Green Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Gray Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(2552, 2216)
+scale = Vector2(18, 18)
+texture = ExtResource("18_wicy7")
+mission_id = 7
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Gray Planet/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Blue Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(2368, 1608)
+scale = Vector2(18, 18)
+texture = ExtResource("19_j7wcr")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Blue Asteroid/ObjectArea" index="0"]
+position = Vector2(0.444443, 0.111107)
+shape = SubResource("CircleShape2D_04olu")
+
+[node name="Green Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(3467, 240)
+scale = Vector2(15.375, 14.625)
+texture = ExtResource("20_oftmi")
+mission_id = 3
+round = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Green Asteroid/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_848fu")
+
+[node name="Greener Asteroid2" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(3250, -956)
+scale = Vector2(18, 18)
+texture = ExtResource("21_iigka")
+mission_id = 6
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Greener Asteroid2/ObjectArea" index="0"]
+position = Vector2(0.888901, 0)
+shape = SubResource("CircleShape2D_2tw2n")
+
+[node name="Pink Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(631, -771)
+scale = Vector2(21.375, 21.375)
+texture = ExtResource("22_d05ov")
+mission_id = 4
+round = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Pink Asteroid/ObjectArea" index="0"]
+position = Vector2(0.555556, 0.166672)
+shape = SubResource("CircleShape2D_6hjo3")
+
+[node name="Planet Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(1493, -1454)
+scale = Vector2(34.4688, 34.4688)
+texture = ExtResource("23_3unkf")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Planet Moon/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Corsshair" type="CharacterBody2D" parent="."]
 position = Vector2(597, 338)
 script = ExtResource("2_a512n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Corsshair"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_v06j8")
-debug_color = Color(0.737255, 0.396078, 0.65098, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Corsshair"]
 z_index = 10
 scale = Vector2(0.622007, 0.622007)
 texture = ExtResource("4_hbv6h")
+metadata/_edit_lock_ = true
 
 [node name="CrosshairArea" type="Area2D" parent="Corsshair"]
 script = ExtResource("3_0d0rv")
+metadata/_edit_lock_ = true
 
 [node name="ScopeBox" type="CollisionShape2D" parent="Corsshair/CrosshairArea"]
 shape = SubResource("CircleShape2D_xmsoo")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Corsshair"]
 position = Vector2(1, 1)
+metadata/_edit_lock_ = true
 
 [node name="Node2D" type="Node2D" parent="Corsshair"]
 scale = Vector2(1.575, 1.575)
+metadata/_edit_lock_ = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Corsshair/Node2D"]
 z_index = 5
@@ -67,67 +660,100 @@ offset_bottom = 269.94
 value = 100.0
 fill_mode = 4
 texture_progress = ExtResource("5_m83l1")
+metadata/_edit_lock_ = true
 
-[node name="ScopeObject" parent="." instance=ExtResource("3_hwrwc")]
-position = Vector2(308, 260)
-mission_id = 1
-round = 1
-
-[node name="ScopeObject2" parent="." instance=ExtResource("3_hwrwc")]
-position = Vector2(824, 199)
-mission_id = 2
-round = 1
-
-[node name="ScopeObject3" parent="." instance=ExtResource("3_hwrwc")]
-position = Vector2(1390, 340)
-mission_id = 1
-round = 2
-
-[node name="ScopeObject4" parent="." instance=ExtResource("3_hwrwc")]
-position = Vector2(630, -272)
-mission_id = 2
-round = 2
+[node name="Corsshair2" type="CharacterBody2D" parent="." groups=["priest_listener"]]
+position = Vector2(0, 1)
+metadata/_edit_lock_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(1200, 800)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 material = SubResource("ShaderMaterial_8o0ss")
 texture = ExtResource("7_ultv7")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Area2" type="StaticBody2D" parent="."]
+collision_layer = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2"]
 position = Vector2(563, 1884)
 shape = SubResource("RectangleShape2D_mbyrs")
 debug_color = Color(0.87451, 0.317647, 0.34902, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="Area3" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area3"]
 position = Vector2(2982, 1230)
 shape = SubResource("RectangleShape2D_clgao")
 debug_color = Color(0.603922, 0.541176, 0.133333, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="Area4" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area4"]
 position = Vector2(-1847, 1230)
 shape = SubResource("RectangleShape2D_yyf05")
 debug_color = Color(0, 0.643137, 0.290196, 0.419608)
+metadata/_edit_lock_ = true
 
 [node name="Area5" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
+collision_layer = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area5"]
-position = Vector2(560.5, -1185)
+position = Vector2(568, -1176)
 shape = SubResource("RectangleShape2D_ys588")
+metadata/_edit_lock_ = true
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
+
+[editable path="Node2D/Yellow Moon"]
+[editable path="Node2D/White Planet"]
+[editable path="Node2D/Moon"]
+[editable path="Node2D/jupiter"]
+[editable path="Node2D/Touro"]
+[editable path="Node2D/Const"]
+[editable path="Node2D/Const2"]
+[editable path="Node2D/Const3"]
+[editable path="Node2D/Const4"]
+[editable path="Node2D/Const5"]
+[editable path="Node2D/Const6"]
+[editable path="Node2D/Const7"]
+[editable path="Node2D/Const8"]
+[editable path="Node2D/Const9"]
+[editable path="Node2D/Const10"]
+[editable path="Node2D/Const11"]
+[editable path="Node2D/Via Leite"]
+[editable path="Node2D/Venus"]
+[editable path="Node2D/Saturn"]
+[editable path="Node2D/Yello Asteroid"]
+[editable path="Node2D/Pink Planet"]
+[editable path="Node2D/Rocky Planet"]
+[editable path="Node2D/Chesse Moon"]
+[editable path="Node2D/Basic Asteroid"]
+[editable path="Node2D/Orange Planet"]
+[editable path="Node2D/Big Blue"]
+[editable path="Node2D/Green Planet"]
+[editable path="Node2D/Gray Planet"]
+[editable path="Node2D/Blue Asteroid"]
+[editable path="Node2D/Green Asteroid"]
+[editable path="Node2D/Greener Asteroid2"]
+[editable path="Node2D/Pink Asteroid"]
+[editable path="Node2D/Planet Moon"]
