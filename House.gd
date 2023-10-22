@@ -15,6 +15,8 @@ func _ready():
 		print_debug("INIT ROLANDO")
 		galileo.global_position = HouseState.galileo_pos
 		galileo.flip_h = HouseState.galileo_flipped
+	if Missions.curr_round == 2:
+		get_tree().change_scene_to_file("res://win.tscn")
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	anim.play("closed")
 	if OutPriestState.priest_entering:
