@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://1xxvq7y5mt1e"]
+
+[ext_resource type="Texture2D" uid="uid://di3m4o3txtrss" path="res://res/V.png" id="1_mc07h"]
+[ext_resource type="Script" path="res://Check.gd" id="2_1ejoi"]
+
+[node name="Check" type="Sprite2D"]
+texture = ExtResource("1_mc07h")
+script = ExtResource("2_1ejoi")
