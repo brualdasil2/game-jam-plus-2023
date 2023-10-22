@@ -749,13 +749,9 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Area2" type="StaticBody2D" parent="."]
-<<<<<<< HEAD
-collision_layer = 8
-=======
 z_index = -1
 collision_layer = 8
 collision_mask = 8
->>>>>>> cores
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2"]
@@ -774,13 +770,9 @@ metadata/_edit_lock_ = true
 
 [node name="Area3" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-<<<<<<< HEAD
-collision_layer = 8
-=======
 z_index = -1
 collision_layer = 8
 collision_mask = 8
->>>>>>> cores
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area3"]
@@ -796,13 +788,9 @@ texture = SubResource("CanvasTexture_bflbw")
 
 [node name="Area4" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-<<<<<<< HEAD
-collision_layer = 8
-=======
 z_index = -1
 collision_layer = 8
 collision_mask = 8
->>>>>>> cores
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area4"]
@@ -820,11 +808,8 @@ texture = SubResource("CanvasTexture_pyw5v")
 [node name="Area5" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 8
-<<<<<<< HEAD
 metadata/_edit_lock_ = true
-=======
 collision_mask = 8
->>>>>>> cores
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area5"]
 visible = false
@@ -837,8 +822,6 @@ position = Vector2(789, -1995.5)
 scale = Vector2(8888, 3577)
 texture = SubResource("CanvasTexture_uobfq")
 
-<<<<<<< HEAD
-=======
 [node name="OutPriest" parent="." instance=ExtResource("9_a043u")]
 visible = false
 
@@ -1278,7 +1261,6 @@ position = Vector2(-1581, -640)
 scale = Vector2(11.8437, 10.6601)
 texture = ExtResource("35_t6bpw")
 
->>>>>>> cores
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
 
