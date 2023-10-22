@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvpu0o3flg7cc"]
+[gd_scene load_steps=5 format=3 uid="uid://dvpu0o3flg7cc"]
 
 [ext_resource type="Texture2D" uid="uid://cl2fr1a32fu12" path="res://res/WalkPadre.png" id="1_6ycdo"]
 [ext_resource type="Script" path="res://OutPriest.gd" id="1_bg2c8"]
 [ext_resource type="Script" path="res://Priest.gd" id="2_eis6c"]
+[ext_resource type="AudioStream" uid="uid://dnbapkxf82fku" path="res://res/porta.mp3" id="4_bjfqd"]
 
 [node name="OutPriest" type="Node2D"]
 process_mode = 3
@@ -41,5 +42,9 @@ position = Vector2(-42, 514)
 [node name="Pos5" type="Marker2D" parent="."]
 position = Vector2(34, 513)
 
+[node name="KnockSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bjfqd")
+
 [connection signal="in_door" from="Priest" to="." method="_on_priest_in_door"]
 [connection signal="timeout" from="Priest/Timer" to="Priest" method="_on_timer_timeout"]
+[connection signal="finished" from="KnockSound" to="Priest" method="_on_knock_sound_finished"]

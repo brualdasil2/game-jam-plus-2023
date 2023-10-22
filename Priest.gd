@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var pos4 : Marker2D
 @onready var pos5 : Marker2D
 @onready var timer = $Timer
+@onready var knock = $"../KnockSound"
 
 @export var MIN_MOVE_SPEED = 50.0
 @export var MAX_MOVE_SPEED = 300.0
@@ -17,6 +18,7 @@ var target_pos : Vector2
 var target_pos_numb = 1
 var moving : bool = false
 var paused = false
+var on_door = false
 
 signal in_door
 
@@ -67,10 +69,17 @@ func is_in_pos():
 	return (global_position - target_pos).length() < 10.0
 
 func arrive_in_door():
-	in_door.emit()
+	on_door = true
 	stop()
+	knock.play()
+	
+
+func enter_door():
+	in_door.emit()
 
 func _physics_process(delta):
+	if on_door:
+		pass
 	if paused:
 		return
 	if is_in_pos() and moving:
@@ -112,3 +121,6 @@ func _on_timer_timeout():
 		5:
 			target_pos = pos5.global_position
 
+
+func _on_knock_sound_finished():
+	enter_door()
