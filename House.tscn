@@ -10,9 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dvpu0o3flg7cc" path="res://priest.tscn" id="7_qse7h"]
 [ext_resource type="Texture2D" uid="uid://dc6h37f2lmiyp" path="res://res/door.png" id="9_3hq2q"]
 
-[sub_resource type="Animation" id="Animation_45qo5"]
-resource_name = "closed"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_ihhdg"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,8 +37,9 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_ihhdg"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_45qo5"]
+resource_name = "closed"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -149,24 +149,6 @@ position = Vector2(713, 434)
 position = Vector2(166, 308)
 zoom = Vector2(0.53, 0.53)
 
-[node name="Pos1" type="Marker2D" parent="."]
-position = Vector2(-835, 513)
-
-[node name="Pos2" type="Marker2D" parent="."]
-position = Vector2(-618, 513)
-
-[node name="Pos3" type="Marker2D" parent="."]
-position = Vector2(-346, 513)
-
-[node name="Pos4" type="Marker2D" parent="."]
-position = Vector2(-42, 514)
-
-[node name="Pos5" type="Marker2D" parent="."]
-position = Vector2(34, 513)
-
-[node name="Priest" parent="." instance=ExtResource("7_qse7h")]
-position = Vector2(-833, 514)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0wajw")
@@ -179,6 +161,8 @@ position = Vector2(176, 421)
 scale = Vector2(4.95833, 4.95833)
 texture = ExtResource("9_3hq2q")
 
+[node name="OutPriest" parent="." instance=ExtResource("7_qse7h")]
+
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]
 [connection signal="pressed" from="Reza" to="." method="_on_reza_pressed"]
@@ -188,4 +172,4 @@ texture = ExtResource("9_3hq2q")
 [connection signal="mouse_entered" from="Scope" to="." method="_on_scope_mouse_entered"]
 [connection signal="mouse_exited" from="Scope" to="." method="_on_scope_mouse_exited"]
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
-[connection signal="in_door" from="Priest" to="." method="_on_priest_in_door"]
+[connection signal="in_door" from="OutPriest" to="." method="_on_out_priest_in_door"]

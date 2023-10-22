@@ -93,6 +93,6 @@ func _on_notebook_mouse_exited():
 	pass # Replace with function body.
 
 
-func _on_priest_in_door():
+func _on_out_priest_in_door():
 	print_debug("PRIEST IN DOOR!!!!!!!!!!")
 	anim.play("open")

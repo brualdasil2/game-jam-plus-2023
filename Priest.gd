@@ -92,3 +92,4 @@ func _on_timer_timeout():
 			target_pos = pos4.global_position
 		5:
 			target_pos = pos5.global_position
+
