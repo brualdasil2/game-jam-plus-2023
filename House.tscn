@@ -172,3 +172,4 @@ texture = ExtResource("9_3hq2q")
 [connection signal="mouse_entered" from="Scope" to="." method="_on_scope_mouse_entered"]
 [connection signal="mouse_exited" from="Scope" to="." method="_on_scope_mouse_exited"]
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
+[connection signal="in_door" from="OutPriest" to="." method="_on_out_priest_in_door"]

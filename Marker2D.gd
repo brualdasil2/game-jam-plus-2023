@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var rayright = $pontodir/RayCast2D
 @onready var mousecage = $MouseCage
 @onready var charge_progress = $Node2D/TextureProgressBar
+@onready var outPriest = $"../OutPriest"
 
 const MOVING_TRESHOLD = 0.1
 
@@ -55,6 +56,7 @@ func save_state():
 
 func go_to_house():
 	save_state()
+	outPriest.save_state()
 	get_tree().change_scene_to_file("res://House.tscn")
 	
 	
@@ -134,3 +136,7 @@ func _on_crosshair_area_area_entered(area):
 
 func _on_crosshair_area_area_exited(area):
 	curr_area = null
+
+
+func _on_out_priest_in_door():
+	go_to_house()
