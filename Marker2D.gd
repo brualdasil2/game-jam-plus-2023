@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var MOUSE_SPEED = 2000
-@export var MOUSE_ACCEL = 30
+@export var MOUSE_ACCEL = 50
 @export var MOUSE_FRICTION = 200
 @export var MOUSE_THRESHOLD = 1
 
@@ -35,15 +35,15 @@ func _physics_process(delta):
 		tpd = false
 	var mouse_pos : Vector2 = get_mouse_pos()
 	var mouse_direction : Vector2 = mouse_pos - prev_mouse_pos
-	if find_charge > 0.0:
-		velocity += MOUSE_ACCEL * delta * mouse_direction
+	velocity += MOUSE_ACCEL * delta * mouse_direction
 	var op_dir : Vector2 = velocity.normalized() * -1
 	velocity += MOUSE_FRICTION * delta * op_dir
 	if velocity.length() > MOUSE_SPEED:
 		velocity = velocity.normalized() * MOUSE_SPEED
 
 	pos_tests(delta)
-	move_and_slide()
+	if find_charge == 0.0:
+		move_and_slide()
 
 	prev_mouse_pos = mouse_pos
 

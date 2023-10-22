@@ -8,6 +8,7 @@
 
 [node name="OutPriest" type="Node2D" groups=["out_priest"]]
 process_mode = 3
+visible = false
 z_index = -100
 script = ExtResource("1_bg2c8")
 
