@@ -1,4 +1,4 @@
-extends Marker2D
+extends CharacterBody2D
 
 @export var MOUSE_SPEED = 10050
 @export var MOUSE_ACCEL = 1000
@@ -15,7 +15,6 @@ const MOVING_TRESHOLD = 0.1
 
 var prev_mouse_pos : Vector2 = Vector2.ZERO
 var tpd : bool = false
-var velocity : Vector2 = Vector2.ZERO
 var find_charge = 0.0
 var charge_blocked = false
 
@@ -46,7 +45,7 @@ func _physics_process(delta):
 	else:
 		var op_dir : Vector2 = velocity.normalized() * -1
 		velocity += MOUSE_FRICTION * delta * op_dir
-	global_position += velocity * delta
+	move_and_slide()
 	pos_tests()
 	prev_mouse_pos = mouse_pos
 
