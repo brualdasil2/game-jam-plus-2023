@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://ObjectArea.gd" id="3_ktveh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6co3"]
-radius = 81.0247
+radius = 7.42847
 
 [node name="ScopeObject" type="Sprite2D"]
 texture = ExtResource("1_yus6r")
