@@ -9,8 +9,9 @@ extends Node2D
 func _ready():
 	if HouseState.initialized:
 		print_debug("INIT ROLANDO")
-		galileo.position = HouseState.galileo_pos
+		galileo.global_position = HouseState.galileo_pos
 		galileo.flip_h = HouseState.galileo_flipped
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func _physics_process(delta):
 	match galileo.state:
@@ -34,7 +35,7 @@ func _process(delta):
 	pass
 
 func save_state():
-	HouseState.galileo_pos = galileo.position
+	HouseState.galileo_pos = galileo.global_position
 	HouseState.galileo_flipped = galileo.flip_h
 	HouseState.initialized = true
 	print("SET HS INIT: " + str(HouseState.initialized))

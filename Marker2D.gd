@@ -20,6 +20,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	center_mouse()
 	prev_mouse_pos = get_mouse_pos()
+	if ScopeState.initialized:
+		global_position = ScopeState.scope_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,8 +43,13 @@ func _physics_process(delta):
 	global_position += velocity * delta
 	pos_tests()
 	prev_mouse_pos = mouse_pos
-		
+
+func save_state():
+	ScopeState.scope_position = global_position
+	ScopeState.initialized = true
+
 func go_to_house():
+	save_state()
 	get_tree().change_scene_to_file("res://House.tscn")
 	
 func _process(delta):
@@ -65,9 +72,6 @@ func _on_mouse_cage_mouse_shape_exited(shape_idx):
 	prev_mouse_pos = get_viewport_rect().size/2
 	center_mouse()
 	tpd = true
-
-
-
 
 
 func _on_crosshair_area_area_entered(area):
