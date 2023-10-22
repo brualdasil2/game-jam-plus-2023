@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=7 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
 [ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="2_pupr4"]
 [ext_resource type="Texture2D" uid="uid://i5ngmnx333b0" path="res://space.jpg" id="4_3t1gi"]
+[ext_resource type="Texture2D" uid="uid://cr0pcxw2mw02v" path="res://paralax ex.webp" id="5_fllue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnwax"]
 size = Vector2(1172, 651)
@@ -20,6 +21,7 @@ visible = false
 position = Vector2(1, 1)
 
 [node name="MouseCage" type="Area2D" parent="Marker2D"]
+visible = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Marker2D/MouseCage"]
@@ -34,6 +36,7 @@ texture = ExtResource("2_pupr4")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1200, 800)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -41,5 +44,10 @@ texture = ExtResource("4_3t1gi")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(680, 650)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_fllue")
+centered = false
 
 [connection signal="mouse_shape_exited" from="Marker2D/MouseCage" to="Marker2D" method="_on_mouse_cage_mouse_shape_exited"]
