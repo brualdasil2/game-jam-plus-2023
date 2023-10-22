@@ -11,6 +11,8 @@ extends CharacterBody2D
 @onready var rayright = $pontodir/RayCast2D
 @onready var mousecage = $MouseCage
 @onready var charge_progress = $Node2D/TextureProgressBar
+@onready var certoSound = $Certosound
+@onready var erradoSound = $ErradoSound
 
 var prev_mouse_pos : Vector2 = Vector2.ZERO
 var tpd : bool = false
@@ -70,7 +72,7 @@ func charge_find(delta):
 	if find_charge <= FIND_TIME:
 		return
 	if curr_area == null:
-		print_debug("ERROR! No planet found")
+		erradoSound.play()
 		reset_charge()
 		return
 	# TODO: test curr round
@@ -78,19 +80,20 @@ func charge_find(delta):
 	var mission_round = curr_area.round
 	var mission_rounds_dict = Missions.missions_status[Missions.curr_round]
 	if mission_id not in mission_rounds_dict:
-		print_debug("ERROR! No planet found")
+		erradoSound.play()
 		reset_charge()
 		return
 	if mission_rounds_dict[mission_id] == true:
-		print_debug("ERROR! No planet found")
+		erradoSound.play()
 		reset_charge()
 		return
 	if mission_round != Missions.curr_round:
-		print_debug("ERROR! No planet found")
+		erradoSound.play()
 		reset_charge()
 		return
 	Missions.missions_status[Missions.curr_round][mission_id] = true
 	print_debug("FOUND PLANET " + str(curr_area.mission_id))
+	certoSound.play()
 	if Missions.all_round_missions_done():
 		print_debug("ROUND DONE!")
 		Missions.curr_round += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=65 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://cs3driblpa6io" path="res://res/space/Green Asteroid 2.png" id="21_iigka"]
 [ext_resource type="Texture2D" uid="uid://bg6luimhgxjar" path="res://res/space/Asteroid2.png" id="22_d05ov"]
 [ext_resource type="Texture2D" uid="uid://bqjkgkv2efefl" path="res://res/space/plannets2.png" id="23_3unkf"]
+[ext_resource type="AudioStream" uid="uid://dk0qj2nq5ogfe" path="res://res/certo.wav" id="30_5rem4"]
+[ext_resource type="AudioStream" uid="uid://c40fan2xslwqu" path="res://res/errado.wav" id="31_0wc60"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccxcv"]
 radius = 8.01776
@@ -671,6 +673,14 @@ value = 100.0
 fill_mode = 4
 texture_progress = ExtResource("5_m83l1")
 metadata/_edit_lock_ = true
+
+[node name="Certosound" type="AudioStreamPlayer" parent="Corsshair"]
+stream = ExtResource("30_5rem4")
+volume_db = 8.0
+
+[node name="ErradoSound" type="AudioStreamPlayer" parent="Corsshair"]
+stream = ExtResource("31_0wc60")
+volume_db = 5.143
 
 [node name="Corsshair2" type="CharacterBody2D" parent="." groups=["priest_listener"]]
 visible = false

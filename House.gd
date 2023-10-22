@@ -7,6 +7,7 @@ extends Node2D
 @onready var anim = $AnimationPlayer
 @onready var inPriest = $InPriestNode
 @onready var doorSound = $DoorSound
+@onready var closeSound = $CloseSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -124,7 +125,7 @@ func _on_out_priest_in_door():
 
 
 func _on_in_priest_node_in_door_again():
-	print_debug("AGAIN")
+	closeSound.play()
 	anim.play("closed")
 	var out_priest = get_tree().get_first_node_in_group("out_priest")
 	out_priest.reset()

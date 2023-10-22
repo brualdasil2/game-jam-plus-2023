@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c01v3icnohflb"]
+[gd_scene load_steps=20 format=3 uid="uid://c01v3icnohflb"]
 
 [ext_resource type="Script" path="res://House.gd" id="1_c4gxq"]
 [ext_resource type="PackedScene" uid="uid://bvuf56ajlbbmq" path="res://Galileo.tscn" id="1_fqx6u"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://InPriestNode.gd" id="9_kokfk"]
 [ext_resource type="Script" path="res://InPriestSp.gd" id="10_r2ote"]
 [ext_resource type="AudioStream" uid="uid://df33wbp46j33i" path="res://res/open.wav" id="12_4hyfx"]
+[ext_resource type="AudioStream" uid="uid://cpyajhjyvqvmv" path="res://res/Door Closing.wav" id="13_gg40j"]
 
 [sub_resource type="Animation" id="Animation_ihhdg"]
 length = 0.001
@@ -240,6 +241,9 @@ position = Vector2(103, 522)
 [node name="DoorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_4hyfx")
 volume_db = -1.553
+
+[node name="CloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_gg40j")
 
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]
