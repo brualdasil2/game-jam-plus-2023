@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@export var MOUSE_SPEED = 5000
-@export var MOUSE_ACCEL = 100
-@export var MOUSE_FRICTION = 1
+@export var MOUSE_SPEED = 2000
+@export var MOUSE_ACCEL = 30
+@export var MOUSE_FRICTION = 200
+@export var MOUSE_THRESHOLD = 1
 
 @export var FIND_TIME = 2.0
 
@@ -11,8 +12,6 @@ extends CharacterBody2D
 @onready var mousecage = $MouseCage
 @onready var charge_progress = $Node2D/TextureProgressBar
 @onready var outPriest = $"../OutPriest"
-
-const MOVING_TRESHOLD = 0.1
 
 var prev_mouse_pos : Vector2 = Vector2.ZERO
 var tpd : bool = false
@@ -38,17 +37,15 @@ func _physics_process(delta):
 		
 	var mouse_pos : Vector2 = get_mouse_pos()
 	var mouse_direction : Vector2 = mouse_pos - prev_mouse_pos
-	if mouse_direction.length() > MOVING_TRESHOLD:
-		velocity += MOUSE_ACCEL * delta * mouse_direction
-	else:
-		var op_dir : Vector2 = velocity * -1
-		velocity += MOUSE_FRICTION * delta * op_dir
+	velocity += MOUSE_ACCEL * delta * mouse_direction
+	var op_dir : Vector2 = velocity.normalized() * -1
+	velocity += MOUSE_FRICTION * delta * op_dir
 	if velocity.length() > MOUSE_SPEED:
 		velocity = velocity.normalized() * MOUSE_SPEED
 
 	pos_tests(delta)
 	move_and_slide()
-	print_debug("SPEEDDDDDDDDDDDD: " + str(velocity.length()))
+
 	prev_mouse_pos = mouse_pos
 
 func save_state():
@@ -115,12 +112,13 @@ func center_mouse():
 	tpd = true
 
 func get_mouse_pos() -> Vector2:
-	return get_local_mouse_position()
+	#return get_local_mouse_position()
+	return get_global_mouse_position() - global_position
 
 func pos_tests(delta):
 	var mouse_pos = get_mouse_pos()
 	var new_vec
-	if mouse_pos.length()> 100:
+	if mouse_pos.length()> 200:
 		new_vec = (mouse_pos-prev_mouse_pos)
 		velocity += MOUSE_ACCEL * delta * new_vec
 		center_mouse()
