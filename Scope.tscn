@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=70 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -118,16 +118,30 @@ size = Vector2(278, 252)
 shader = ExtResource("7_fr2p1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbyrs"]
-size = Vector2(3084.38, 1568.13)
+size = Vector2(3084.38, 2397.06)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6wouw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clgao"]
-size = Vector2(1740.05, 2885.53)
+size = Vector2(2376, 3913)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bflbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyf05"]
-size = Vector2(1740.05, 2880)
+size = Vector2(1737, 3902.25)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pyw5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys588"]
-size = Vector2(6573, 1930)
+size = Vector2(7192.5, 2535)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uobfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw7nr"]
+size = Vector2(687, 6721)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx1n4"]
+size = Vector2(8140.75, 1047.75)
 
 [node name="Scope" type="Node2D"]
 script = ExtResource("1_7e5f4")
@@ -144,7 +158,7 @@ metadata/_edit_group_ = true
 metadata/_edit_group_ = true
 
 [node name="White Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(1246.5, 68.5002)
+position = Vector2(1396, 37)
 scale = Vector2(14.3125, 14.3125)
 texture = ExtResource("4_uvwwy")
 mission_id = 3
@@ -155,8 +169,8 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ccxcv")
 
 [node name="Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(-563, 846)
-scale = Vector2(28.375, 28.375)
+position = Vector2(-462, 892)
+scale = Vector2(35.5625, 35.5625)
 texture = ExtResource("7_pe06s")
 mission_id = 4
 round = 1
@@ -168,8 +182,8 @@ scale = Vector2(-1.13413, 1.12945)
 shape = SubResource("CircleShape2D_wsxhr")
 
 [node name="jupiter" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(3283, 1255)
-scale = Vector2(22.5625, 21.7187)
+position = Vector2(3775.5, 1652.2)
+scale = Vector2(25.4062, 24.4561)
 texture = ExtResource("6_afgq7")
 mission_id = 5
 round = 3
@@ -182,8 +196,8 @@ shape = SubResource("CircleShape2D_om1l8")
 
 [node name="Touro" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(-2222, 130)
-scale = Vector2(10.4033, 9.94156)
+position = Vector2(-2212.95, 418.242)
+scale = Vector2(11.311, 10.809)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -242,8 +256,8 @@ shape = SubResource("CircleShape2D_wa358")
 
 [node name="Const3" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(-263.578, 2109.66)
-scale = Vector2(11.6743, 11.1561)
+position = Vector2(-27.0001, 2751)
+scale = Vector2(13.0871, 12.5062)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -284,7 +298,7 @@ shape = SubResource("CircleShape2D_4jpax")
 
 [node name="Const5" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(3291, 2153)
+position = Vector2(3630, 2871)
 scale = Vector2(10.9111, 10.4268)
 texture = ExtResource("6_ggyfo")
 hframes = 5
@@ -305,8 +319,8 @@ shape = SubResource("CircleShape2D_r8xox")
 
 [node name="Const6" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(2208.29, -460.765)
-scale = Vector2(12.4778, 11.9239)
+position = Vector2(2203, -544)
+scale = Vector2(13.8906, 13.274)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -326,7 +340,7 @@ shape = SubResource("CircleShape2D_m6rmp")
 
 [node name="Const7" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(953.105, 1675.05)
+position = Vector2(450, 1805)
 scale = Vector2(8.65296, 8.26889)
 texture = ExtResource("6_ggyfo")
 hframes = 5
@@ -347,8 +361,8 @@ shape = SubResource("CircleShape2D_607ye")
 
 [node name="Const8" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(-1917.34, 2134.52)
-scale = Vector2(12.6668, 12.1046)
+position = Vector2(-2095.67, 3180.55)
+scale = Vector2(13.9897, 13.3687)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -368,8 +382,8 @@ shape = SubResource("CircleShape2D_vxehh")
 
 [node name="Const9" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(-1390.33, -1700.71)
-scale = Vector2(11.1148, 10.6215)
+position = Vector2(-1716, -1996)
+scale = Vector2(12.271, 11.7264)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -389,8 +403,8 @@ shape = SubResource("CircleShape2D_j5kcg")
 
 [node name="Const10" parent="Node2D" instance=ExtResource("3_hwrwc")]
 material = SubResource("ShaderMaterial_yksfe")
-position = Vector2(2634.66, 622.988)
-scale = Vector2(11.573, 11.0594)
+position = Vector2(2696.66, 682.238)
+scale = Vector2(13.5106, 12.911)
 texture = ExtResource("6_ggyfo")
 hframes = 5
 vframes = 5
@@ -430,7 +444,7 @@ scale = Vector2(-0.495827, 0.409909)
 shape = SubResource("CircleShape2D_yxdxf")
 
 [node name="Via Leite" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(2750, -1691)
+position = Vector2(3389, -2183)
 scale = Vector2(36.7422, 36.7422)
 texture = ExtResource("6_vyors")
 mission_id = 10
@@ -444,7 +458,7 @@ scale = Vector2(-1.51163, 0.910852)
 shape = SubResource("CircleShape2D_kefvf")
 
 [node name="Venus" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(1583.75, 2287.25)
+position = Vector2(1246, 3066)
 scale = Vector2(34.3438, 34.3438)
 texture = ExtResource("7_uc4xc")
 mission_id = 4
@@ -457,7 +471,7 @@ scale = Vector2(-1.13413, 1.12945)
 shape = SubResource("CircleShape2D_wsxhr")
 
 [node name="Saturn" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(-2316, 1486)
+position = Vector2(-2061, 1891)
 scale = Vector2(30.5469, 21.0614)
 texture = ExtResource("8_ff1nh")
 mission_id = 6
@@ -471,7 +485,7 @@ scale = Vector2(-0.469768, 1.25794)
 shape = SubResource("CircleShape2D_revph")
 
 [node name="Blue Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(1936, 957)
+position = Vector2(1628, 1041)
 scale = Vector2(8, 8)
 texture = ExtResource("6_vvl1x")
 mission_id = 4
@@ -512,7 +526,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Chesse Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(-1522, -654)
+position = Vector2(-1315, -1129)
 scale = Vector2(23.625, 23.625)
 texture = ExtResource("13_6hags")
 metadata/_edit_group_ = true
@@ -522,7 +536,7 @@ position = Vector2(-0.611115, 1.38889)
 shape = SubResource("CircleShape2D_njx8p")
 
 [node name="Basic Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(-1449, 1770)
+position = Vector2(2896, 1367)
 scale = Vector2(18.375, 18.375)
 texture = ExtResource("14_1bcrm")
 metadata/_edit_group_ = true
@@ -530,8 +544,26 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" parent="Node2D/Basic Asteroid/ObjectArea" index="0"]
 shape = SubResource("CircleShape2D_ycs6i")
 
+[node name="Basic Asteroid2" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(-1555, 2446)
+scale = Vector2(18.375, 18.375)
+texture = ExtResource("14_1bcrm")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Basic Asteroid2/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
+[node name="Basic Asteroid3" parent="Node2D" instance=ExtResource("3_hwrwc")]
+position = Vector2(2533, -1474)
+scale = Vector2(18.375, 18.375)
+texture = ExtResource("14_1bcrm")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Node2D/Basic Asteroid3/ObjectArea" index="0"]
+shape = SubResource("CircleShape2D_ycs6i")
+
 [node name="Orange Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(-214, 1373.5)
+position = Vector2(-435, 1736)
 scale = Vector2(14.875, 15.3125)
 texture = ExtResource("15_a46nv")
 mission_id = 3
@@ -542,18 +574,18 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Big Blue" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(474, 2252)
-scale = Vector2(19.0625, 19.0625)
+position = Vector2(881, 2433)
+scale = Vector2(24.0313, 24.0313)
 texture = ExtResource("16_x018h")
-mission_id = 2
-round = 4
+mission_id = 4
+round = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Node2D/Big Blue/ObjectArea" index="0"]
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Green Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(1743.5, 1621.5)
+position = Vector2(1452, 2042)
 scale = Vector2(13.9375, 13.9375)
 texture = ExtResource("17_108ma")
 mission_id = 8
@@ -564,7 +596,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Gray Planet" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(2552, 2216)
+position = Vector2(2512, 2872)
 scale = Vector2(18, 18)
 texture = ExtResource("18_wicy7")
 mission_id = 7
@@ -575,7 +607,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Blue Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(2368, 1608)
+position = Vector2(2543, 1874)
 scale = Vector2(18, 18)
 texture = ExtResource("19_j7wcr")
 metadata/_edit_group_ = true
@@ -585,7 +617,7 @@ position = Vector2(0.444443, 0.111107)
 shape = SubResource("CircleShape2D_04olu")
 
 [node name="Green Asteroid" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(3467, 240)
+position = Vector2(3829, 353)
 scale = Vector2(15.375, 14.625)
 texture = ExtResource("20_oftmi")
 mission_id = 3
@@ -620,7 +652,7 @@ position = Vector2(0.555556, 0.166672)
 shape = SubResource("CircleShape2D_6hjo3")
 
 [node name="Planet Moon" parent="Node2D" instance=ExtResource("3_hwrwc")]
-position = Vector2(1493, -1454)
+position = Vector2(1255, -1759)
 scale = Vector2(34.4688, 34.4688)
 texture = ExtResource("23_3unkf")
 metadata/_edit_group_ = true
@@ -630,6 +662,8 @@ shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Corsshair" type="CharacterBody2D" parent="."]
 position = Vector2(597, 338)
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("2_a512n")
 metadata/_edit_lock_ = true
 
@@ -675,6 +709,7 @@ metadata/_edit_lock_ = true
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -6
 motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(1200, 800)
 metadata/_edit_lock_ = true
@@ -686,49 +721,111 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Area2" type="StaticBody2D" parent="."]
-collision_layer = 2
+z_index = -1
+collision_layer = 8
+collision_mask = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2"]
-position = Vector2(563, 1884)
+visible = false
+position = Vector2(570, 2494)
 shape = SubResource("RectangleShape2D_mbyrs")
 debug_color = Color(0.87451, 0.317647, 0.34902, 0.419608)
 metadata/_edit_lock_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Area2"]
+self_modulate = Color(0.505882, 0, 0, 0.12549)
+position = Vector2(568.125, 2492.5)
+scale = Vector2(3089.75, 2385)
+texture = SubResource("CanvasTexture_6wouw")
+metadata/_edit_lock_ = true
+
 [node name="Area3" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-collision_layer = 2
+z_index = -1
+collision_layer = 8
+collision_mask = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area3"]
-position = Vector2(2982, 1230)
+position = Vector2(3302, 1748)
 shape = SubResource("RectangleShape2D_clgao")
 debug_color = Color(0.603922, 0.541176, 0.133333, 0.419608)
-metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area3"]
+self_modulate = Color(0.376471, 0.376471, 0.0156863, 0.235294)
+position = Vector2(4032, 2265.5)
+scale = Vector2(3828, -4945)
+texture = SubResource("CanvasTexture_bflbw")
 
 [node name="Area4" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-collision_layer = 2
+z_index = -1
+collision_layer = 8
+collision_mask = 8
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area4"]
-position = Vector2(-1847, 1230)
+position = Vector2(-1850.5, 1734.88)
 shape = SubResource("RectangleShape2D_yyf05")
 debug_color = Color(0, 0.643137, 0.290196, 0.419608)
-metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area4"]
+self_modulate = Color(0, 0.258824, 0.121569, 0.341176)
+position = Vector2(-2551.5, 2248)
+scale = Vector2(3141, 4918)
+texture = SubResource("CanvasTexture_pyw5v")
 
 [node name="Area5" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
-collision_layer = 2
-metadata/_edit_lock_ = true
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area5"]
-position = Vector2(568, -1176)
+visible = false
+position = Vector2(877.75, -1478.5)
 shape = SubResource("RectangleShape2D_ys588")
-metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area5"]
+self_modulate = Color(0.0431373, 0, 0.458824, 0.215686)
+position = Vector2(789, -1995.5)
+scale = Vector2(8888, 3577)
+texture = SubResource("CanvasTexture_uobfq")
 
 [node name="OutPriest" parent="." instance=ExtResource("9_a043u")]
 visible = false
+
+[node name="OuterBound" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBound"]
+position = Vector2(-3069, 448.5)
+shape = SubResource("RectangleShape2D_gw7nr")
+
+[node name="OuterBound2" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBound2"]
+position = Vector2(4829, 493)
+shape = SubResource("RectangleShape2D_gw7nr")
+
+[node name="OuterBound3" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBound3"]
+position = Vector2(964, 4203)
+shape = SubResource("RectangleShape2D_cx1n4")
+
+[node name="OuterBound4" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterBound4"]
+position = Vector2(858, -3272)
+shape = SubResource("RectangleShape2D_cx1n4")
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
@@ -758,6 +855,8 @@ visible = false
 [editable path="Node2D/Rocky Planet"]
 [editable path="Node2D/Chesse Moon"]
 [editable path="Node2D/Basic Asteroid"]
+[editable path="Node2D/Basic Asteroid2"]
+[editable path="Node2D/Basic Asteroid3"]
 [editable path="Node2D/Orange Planet"]
 [editable path="Node2D/Big Blue"]
 [editable path="Node2D/Green Planet"]
