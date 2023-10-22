@@ -231,6 +231,10 @@ script = ExtResource("10_r2ote")
 wait_time = 2.0
 one_shot = true
 
+[node name="GameOverTimer" type="Timer" parent="InPriestNode"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Pos1" type="Marker2D" parent="."]
 position = Vector2(392, 523)
 
@@ -252,3 +256,4 @@ volume_db = -1.553
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
 [connection signal="in_door_again" from="InPriestNode" to="." method="_on_in_priest_node_in_door_again"]
 [connection signal="timeout" from="InPriestNode/Timer" to="InPriestNode" method="_on_timer_timeout"]
+[connection signal="timeout" from="InPriestNode/GameOverTimer" to="InPriestNode" method="_on_game_over_timer_timeout"]

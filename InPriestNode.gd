@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var timer = $Timer
 @onready var anim = $"../AnimationPlayer"
 @onready var sprite = $InPriestSp
+@onready var galileo = $"../Galileo"
+@onready var gameOverTimer = $GameOverTimer
 
 @export var MOVE_SPEED = 100.0
 @export var TIMER = 2.0
@@ -41,6 +43,7 @@ func go():
 	visible = true
 	moving = true
 	sprite.flip_h = true
+	check_galileo()
 	
 func is_in_pos():
 	return (global_position - target_pos).length() < 10.0
@@ -51,7 +54,13 @@ func arrive_in_door():
 	in_door_again.emit()
 	reset()
 	
-
+func check_galileo():
+	if galileo.state == "praying":
+		return
+	galileo.frozen = true
+	print_debug("GAME OVER")
+	moving = false
+	gameOverTimer.start()
 
 func _physics_process(delta):
 	if not visible:
@@ -89,3 +98,7 @@ func _on_timer_timeout():
 	target_pos_numb = 2
 	target_pos = pos2.global_position
 
+
+
+func _on_game_over_timer_timeout():
+	get_parent().get_parent().load_game_over()

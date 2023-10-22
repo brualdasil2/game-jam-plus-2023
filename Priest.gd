@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var pos5 : Marker2D
 @onready var timer = $Timer
 @onready var knock = $"../KnockSound"
+@onready var walk = $WalkSound
 
 @export var MIN_MOVE_SPEED = 50.0
 @export var MAX_MOVE_SPEED = 300.0
@@ -60,6 +61,7 @@ func reset():
 
 func stop():
 	paused = true
+	walk.stop()
 
 func new_timer():
 	moving = false
@@ -90,6 +92,7 @@ func _physics_process(delta):
 			
 		new_timer()
 		velocity = Vector2.ZERO
+		walk.stop()
 		
 	if moving:
 		var dir = target_pos - global_position
@@ -112,6 +115,8 @@ func _on_timer_timeout():
 		pos = randi_range(1, 5)
 	target_pos_numb = pos
 	print_debug("POS: " + str(pos))
+	if not paused:
+		walk.play()
 	match pos:
 		1:
 			target_pos = pos1.global_position
