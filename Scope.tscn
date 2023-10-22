@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=9 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0pukiwyrlyr8" path="res://scope_object.tscn" id="3_hwrwc"]
 [ext_resource type="Texture2D" uid="uid://cf0v1rxlltbsp" path="res://res/mira.png" id="4_hbv6h"]
 [ext_resource type="Texture2D" uid="uid://carg4q3dbounm" path="res://res/progress.png" id="5_m83l1"]
+[ext_resource type="Texture2D" uid="uid://cliu4u1ev03vp" path="res://space.jpg" id="7_ultv7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmsoo"]
 
@@ -57,6 +58,16 @@ round = 1
 position = Vector2(1390, 340)
 mission_id = 1
 round = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(1200, 800)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("7_ultv7")
+centered = false
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]
 [connection signal="area_exited" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_exited"]
