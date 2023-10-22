@@ -4,11 +4,12 @@ extends Marker2D
 @export var MOUSE_ACCEL = 1000
 @export var MOUSE_FRICTION = 1000
 
-@export var FIND_TIME = 1.0
+@export var FIND_TIME = 2.0
 
 @onready var rayleft = $pontoesq/RayCast2D
 @onready var rayright = $pontodir/RayCast2D
 @onready var mousecage = $MouseCage
+@onready var charge_progress = $Node2D/TextureProgressBar
 
 const MOVING_TRESHOLD = 0.1
 
@@ -85,7 +86,7 @@ func _process(delta):
 	else:
 		find_charge = 0.0
 		charge_blocked = false
-	print_debug(find_charge)
+	charge_progress.value = int(find_charge / FIND_TIME * 100)
 		
 
 func center_mouse():

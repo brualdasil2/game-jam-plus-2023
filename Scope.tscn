@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cunalwip4q4yv"]
+[gd_scene load_steps=8 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
 [ext_resource type="Script" path="res://crosshairArea.gd" id="3_0d0rv"]
 [ext_resource type="PackedScene" uid="uid://b0pukiwyrlyr8" path="res://scope_object.tscn" id="3_hwrwc"]
 [ext_resource type="Texture2D" uid="uid://cf0v1rxlltbsp" path="res://res/mira.png" id="4_hbv6h"]
+[ext_resource type="Texture2D" uid="uid://carg4q3dbounm" path="res://res/progress.png" id="5_m83l1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmsoo"]
 
@@ -28,6 +29,19 @@ shape = SubResource("CircleShape2D_xmsoo")
 
 [node name="Camera2D" type="Camera2D" parent="Corsshair"]
 position = Vector2(1, 1)
+
+[node name="Node2D" type="Node2D" parent="Corsshair"]
+scale = Vector2(1.575, 1.575)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Corsshair/Node2D"]
+z_index = 5
+offset_left = -480.24
+offset_top = -270.06
+offset_right = 479.76
+offset_bottom = 269.94
+value = 100.0
+fill_mode = 4
+texture_progress = ExtResource("5_m83l1")
 
 [node name="ScopeObject" parent="." instance=ExtResource("3_hwrwc")]
 position = Vector2(308, 260)
