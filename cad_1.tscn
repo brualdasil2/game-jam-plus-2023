@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://digmqbbo4qd7i"]
+
+[ext_resource type="Script" path="res://cad.gd" id="1_ciaef"]
+[ext_resource type="Texture2D" uid="uid://pjbvwomsxgbe" path="res://res/cad1.png" id="1_yxppd"]
+
+[node name="Cad1" type="Node2D" groups=["notebook"]]
+script = ExtResource("1_ciaef")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(598.556, 341)
+scale = Vector2(1.24074, 1.24074)
+texture = ExtResource("1_yxppd")

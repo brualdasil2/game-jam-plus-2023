@@ -34,7 +34,7 @@ func _physics_process(delta):
 			galileo.walk_to_target(delta)
 			if galileo.is_on_target():
 				galileo.state = "standing"
-				# open notebook
+				open_notebook()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -45,6 +45,10 @@ func save_state():
 	HouseState.galileo_flipped = galileo.flip_h
 	HouseState.initialized = true
 
+func open_notebook():
+	save_state()
+	get_parent().load_notebook()
+				
 func open_scope():
 	save_state()
 	get_parent().load_scope()

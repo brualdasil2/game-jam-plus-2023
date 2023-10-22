@@ -5,7 +5,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_child(load("res://House.tscn").instantiate())
-	#mainMusic.play()
+	mainMusic.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,3 +31,10 @@ func load_game_over():
 	mainMusic.stop()
 	remove_scene("house")
 	add_child(load("res://game_over.tscn").instantiate())
+
+func load_notebook():
+	remove_scene("house")
+	match Missions.curr_round:
+		1:
+			add_child(load("res://cad_1.tscn").instantiate())
+		
