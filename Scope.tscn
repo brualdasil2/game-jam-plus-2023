@@ -50,7 +50,12 @@ round = 1
 
 [node name="ScopeObject2" parent="." instance=ExtResource("3_hwrwc")]
 position = Vector2(824, 199)
-mission_id = 3
+mission_id = 2
+round = 1
+
+[node name="ScopeObject3" parent="." instance=ExtResource("3_hwrwc")]
+position = Vector2(1390, 340)
+mission_id = 1
 round = 2
 
 [connection signal="area_entered" from="Corsshair/CrosshairArea" to="Corsshair" method="_on_crosshair_area_area_entered"]

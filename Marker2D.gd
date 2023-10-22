@@ -74,8 +74,27 @@ func charge_find(delta):
 		reset_charge()
 		return
 	# TODO: test curr round
-	
+	var mission_id = curr_area.mission_id
+	var mission_round = curr_area.round
+	var mission_rounds_dict = Missions.missions_status[Missions.curr_round]
+	if mission_id not in mission_rounds_dict:
+		print_debug("ERROR! No planet found")
+		reset_charge()
+		return
+	if mission_rounds_dict[mission_id] == true:
+		print_debug("ERROR! No planet found")
+		reset_charge()
+		return
+	if mission_round != Missions.curr_round:
+		print_debug("ERROR! No planet found")
+		reset_charge()
+		return
+	Missions.missions_status[Missions.curr_round][mission_id] = true
 	print_debug("FOUND PLANET " + str(curr_area.mission_id))
+	if Missions.all_round_missions_done():
+		print_debug("ROUND DONE!")
+		Missions.curr_round += 1
+		go_to_house()
 	reset_charge()
 	
 func _process(delta):
