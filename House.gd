@@ -58,3 +58,34 @@ func _on_notebook_pressed():
 func _on_scope_pressed():
 	galileo.state = "walking_to_scope"
 	galileo.target_x = scope.global_position.x
+
+
+func _on_reza_mouse_entered():
+	reza.icon = load("res://res/altar with yellow.png")
+	pass # Replace with function body.
+
+
+func _on_reza_mouse_exited():
+	reza.icon = load("res://res/altar.png")
+	pass # Replace with function body.
+
+
+func _on_scope_mouse_entered():
+	scope.icon = load("res://res/telescope with yellow.png")
+	pass # Replace with function body.
+	
+
+
+func _on_scope_mouse_exited():
+	scope.icon = load("res://res/telescope.png")
+	pass # Replace with function body.
+
+
+func _on_notebook_mouse_entered():
+	notebook.icon = load("res://res/book open with yellow.png")
+	pass # Replace with function body.
+
+
+func _on_notebook_mouse_exited():
+	notebook.icon = load("res://res/book open.png")
+	pass # Replace with function body.

@@ -1,40 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://c01v3icnohflb"]
+[gd_scene load_steps=7 format=3 uid="uid://c01v3icnohflb"]
 
 [ext_resource type="Script" path="res://House.gd" id="1_c4gxq"]
 [ext_resource type="PackedScene" uid="uid://bvuf56ajlbbmq" path="res://Galileo.tscn" id="1_fqx6u"]
-[ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="3_gy2ne"]
+[ext_resource type="Texture2D" uid="uid://3o5r1n33um63" path="res://res/background.png" id="2_xuda8"]
+[ext_resource type="Texture2D" uid="uid://3y6rlnyvjftm" path="res://res/altar.png" id="3_jp1xh"]
+[ext_resource type="Texture2D" uid="uid://cetbd7fm0coif" path="res://res/book open.png" id="4_uwuaw"]
+[ext_resource type="Texture2D" uid="uid://bw4ju23y4k4ec" path="res://res/telescope.png" id="5_b4ms7"]
 
 [node name="House" type="Node2D"]
 script = ExtResource("1_c4gxq")
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -8
+scale = Vector2(5.01482, 5.01482)
+texture = ExtResource("2_xuda8")
+centered = false
+
 [node name="Reza" type="Button" parent="."]
-offset_left = 295.0
-offset_top = 326.0
-offset_right = 431.0
-offset_bottom = 462.0
+offset_left = 634.0
+offset_top = 282.0
+offset_right = 825.0
+offset_bottom = 473.0
 focus_mode = 0
-icon = ExtResource("3_gy2ne")
+icon = ExtResource("3_jp1xh")
 flat = true
 icon_alignment = 1
+expand_icon = true
 
 [node name="Notebook" type="Button" parent="."]
-offset_left = 68.0
-offset_top = 424.0
-offset_right = 165.0
-offset_bottom = 524.0
+offset_left = 196.0
+offset_top = 305.0
+offset_right = 281.0
+offset_bottom = 397.0
 focus_mode = 0
-icon = ExtResource("3_gy2ne")
+icon = ExtResource("4_uwuaw")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Scope" type="Button" parent="."]
-offset_left = 931.0
-offset_top = 338.0
-offset_right = 1168.0
-offset_bottom = 635.0
+offset_left = 961.0
+offset_top = 308.0
+offset_right = 1198.0
+offset_bottom = 605.0
 focus_mode = 0
-icon = ExtResource("3_gy2ne")
+icon = ExtResource("5_b4ms7")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -42,6 +52,12 @@ expand_icon = true
 [node name="Galileo" parent="." instance=ExtResource("1_fqx6u")]
 position = Vector2(713, 434)
 
+[connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
+[connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]
 [connection signal="pressed" from="Reza" to="." method="_on_reza_pressed"]
+[connection signal="mouse_entered" from="Notebook" to="." method="_on_notebook_mouse_entered"]
+[connection signal="mouse_exited" from="Notebook" to="." method="_on_notebook_mouse_exited"]
 [connection signal="pressed" from="Notebook" to="." method="_on_notebook_pressed"]
+[connection signal="mouse_entered" from="Scope" to="." method="_on_scope_mouse_entered"]
+[connection signal="mouse_exited" from="Scope" to="." method="_on_scope_mouse_exited"]
 [connection signal="pressed" from="Scope" to="." method="_on_scope_pressed"]
