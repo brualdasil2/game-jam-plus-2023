@@ -10,7 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("right_click"):
+		get_tree().change_scene_to_file("res://menu.tscn")
 
 
 func _on_video_stream_player_finished():

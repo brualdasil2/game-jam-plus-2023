@@ -216,6 +216,7 @@ vframes = 5
 frame = 1
 mission_id = 2
 round = 4
+constelation_done_frame = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="Planets/Touro/ObjectArea" index="0"]
@@ -234,6 +235,7 @@ vframes = 5
 frame = 3
 mission_id = 2
 round = 1
+constelation_done_frame = 0
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const" index="0"]
@@ -255,6 +257,7 @@ vframes = 5
 frame = 4
 mission_id = 1
 round = 1
+constelation_done_frame = 5
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const2" index="0"]
@@ -276,6 +279,7 @@ vframes = 5
 frame = 7
 mission_id = 2
 round = 2
+constelation_done_frame = 6
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const3" index="0"]
@@ -297,6 +301,7 @@ vframes = 5
 frame = 9
 mission_id = 3
 round = 1
+constelation_done_frame = 8
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const4" index="0"]
@@ -318,6 +323,7 @@ vframes = 5
 frame = 11
 mission_id = 1
 round = 3
+constelation_done_frame = 10
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const5" index="0"]
@@ -339,6 +345,7 @@ vframes = 5
 frame = 13
 mission_id = 1
 round = 5
+constelation_done_frame = 12
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const6" index="0"]
@@ -360,6 +367,7 @@ vframes = 5
 frame = 15
 mission_id = 1
 round = 2
+constelation_done_frame = 14
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const7" index="0"]
@@ -381,6 +389,7 @@ vframes = 5
 frame = 17
 mission_id = 1
 round = 4
+constelation_done_frame = 16
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const8" index="0"]
@@ -402,6 +411,7 @@ vframes = 5
 frame = 19
 mission_id = 3
 round = 5
+constelation_done_frame = 18
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const9" index="0"]
@@ -423,6 +433,7 @@ vframes = 5
 frame = 21
 mission_id = 2
 round = 3
+constelation_done_frame = 20
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const10" index="0"]
@@ -444,6 +455,7 @@ vframes = 5
 frame = 23
 mission_id = 2
 round = 5
+constelation_done_frame = 22
 metadata/_edit_group_ = true
 
 [node name="ObjectArea" parent="Planets/Const11" index="0"]

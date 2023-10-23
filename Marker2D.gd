@@ -7,9 +7,6 @@ extends CharacterBody2D
 
 @export var FIND_TIME = 2.0
 
-@onready var rayleft = $pontoesq/RayCast2D
-@onready var rayright = $pontodir/RayCast2D
-@onready var mousecage = $MouseCage
 @onready var charge_progress = $Node2D/TextureProgressBar
 @onready var certoSound = $Certosound
 @onready var erradoSound = $ErradoSound

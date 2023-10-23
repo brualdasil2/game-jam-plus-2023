@@ -5,7 +5,7 @@ class_name ScopeObject
 @export var round = 0
 @export var focus = 0.0
 
-@export var done_texture : Texture2D 
+@export var constelation_done_frame : int = -1
 
 #@export var scopeCrosshair : CrosshairArea
 
@@ -19,8 +19,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#if Missions.missions_status[round][mission_id]:
-	pass
+	if constelation_done_frame == -1:
+		return
+	if not Missions.missions_status[round]:
+		return
+	if Missions.missions_status[round][mission_id]:
+		frame = constelation_done_frame
 
 	
 
