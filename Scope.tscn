@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=65 format=3 uid="uid://cunalwip4q4yv"]
-=======
-[gd_scene load_steps=73 format=3 uid="uid://cunalwip4q4yv"]
->>>>>>> cores
+[gd_scene load_steps=74 format=3 uid="uid://cunalwip4q4yv"]
 
 [ext_resource type="Script" path="res://Scope.gd" id="1_7e5f4"]
 [ext_resource type="Script" path="res://Marker2D.gd" id="2_a512n"]
@@ -808,7 +804,6 @@ texture = SubResource("CanvasTexture_pyw5v")
 [node name="Area5" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 8
-metadata/_edit_lock_ = true
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area5"]
@@ -821,9 +816,6 @@ self_modulate = Color(0.0431373, 0, 0.458824, 0.215686)
 position = Vector2(789, -1995.5)
 scale = Vector2(8888, 3577)
 texture = SubResource("CanvasTexture_uobfq")
-
-[node name="OutPriest" parent="." instance=ExtResource("9_a043u")]
-visible = false
 
 [node name="OuterBound" type="StaticBody2D" parent="."]
 collision_layer = 8
