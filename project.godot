@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Five-nights-at-galileos"
-run/main_scene="res://Scope.tscn"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

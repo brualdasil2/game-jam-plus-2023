@@ -10,3 +10,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 stream = SubResource("VideoStreamTheora_6qq48")
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(602, 333)
