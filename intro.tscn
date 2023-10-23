@@ -1,15 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cacq2ircp43l5"]
+[gd_scene load_steps=4 format=3 uid="uid://cacq2ircp43l5"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_ndxge"]
+[ext_resource type="AudioStream" uid="uid://d0lgvvm1tsk4g" path="res://res/intro.ogg" id="2_dlplx"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_6qq48"]
-file = "intro.ogv"
+file = "res/intro.ogv"
 
 [node name="Intro" type="Node2D"]
+script = ExtResource("1_ndxge")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1201.0
+offset_bottom = 675.0
 stream = SubResource("VideoStreamTheora_6qq48")
+volume_db = -80.0
+autoplay = true
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dlplx")
 autoplay = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(602, 333)
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
