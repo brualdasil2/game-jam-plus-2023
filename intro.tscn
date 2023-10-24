@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://d0lgvvm1tsk4g" path="res://res/intro.ogg" id="2_dlplx"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_6qq48"]
-file = "res/intro.ogv"
+file = "res://intro.ogv"
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_ndxge")
