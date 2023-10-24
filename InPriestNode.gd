@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var galileo = $"../Galileo"
 @onready var gameOverTimer = $GameOverTimer
 
-@export var MOVE_SPEED = 100.0
+@export var MOVE_SPEED = 150.0
 @export var TIMER = 2.0
 
 var move_speed = MOVE_SPEED

@@ -4,6 +4,7 @@ extends Node2D
 @onready var a3 = $Area3
 @onready var a4 = $Area4
 @onready var a5 = $Area5
+@onready var crossHair = $Corsshair
 
 func _ready():
 	if Missions.curr_round >= 2:
@@ -19,3 +20,5 @@ func _ready():
 		a5.collision_layer = 0
 		a5.collision_mask = 0
 	
+func _on_out_priest_in_door():
+	crossHair._on_out_priest_in_door()

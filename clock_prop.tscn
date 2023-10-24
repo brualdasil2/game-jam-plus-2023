@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c671sqdj3r7qt"]
+
+[ext_resource type="Script" path="res://clock_prop.gd" id="1_2in31"]
+[ext_resource type="Texture2D" uid="uid://pqlmgxjhqxn1" path="res://res/wall clock-Sheet.png" id="1_yjbgb"]
+
+[sub_resource type="Animation" id="Animation_phhs7"]
+resource_name = "run"
+length = 9.0
+loop_mode = 1
+step = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.403758, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6, 6.6, 7.2, 7.8, 8.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_jaxkw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyw5k"]
+_data = {
+"RESET": SubResource("Animation_jaxkw"),
+"run": SubResource("Animation_phhs7")
+}
+
+[node name="ClockProp" type="Node2D"]
+script = ExtResource("1_2in31")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yjbgb")
+hframes = 15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cyw5k")
+}

@@ -1,56 +1,60 @@
-[gd_scene load_steps=20 format=3 uid="uid://c01v3icnohflb"]
+[gd_scene load_steps=24 format=3 uid="uid://c01v3icnohflb"]
 
 [ext_resource type="Script" path="res://House.gd" id="1_c4gxq"]
 [ext_resource type="PackedScene" uid="uid://bvuf56ajlbbmq" path="res://Galileo.tscn" id="1_fqx6u"]
 [ext_resource type="Texture2D" uid="uid://3o5r1n33um63" path="res://res/background.png" id="2_xuda8"]
-[ext_resource type="Texture2D" uid="uid://ucowm6jpxegw" path="res://res/background_open.png" id="3_cqo4m"]
 [ext_resource type="Texture2D" uid="uid://3y6rlnyvjftm" path="res://res/altar.png" id="3_jp1xh"]
+[ext_resource type="PackedScene" uid="uid://con7vbnex0n7y" path="res://moon_prop.tscn" id="3_ukjit"]
+[ext_resource type="PackedScene" uid="uid://cygfbtbyve3po" path="res://stars_1_prop.tscn" id="4_2ccfw"]
 [ext_resource type="Texture2D" uid="uid://cetbd7fm0coif" path="res://res/book open.png" id="4_uwuaw"]
+[ext_resource type="PackedScene" uid="uid://c671sqdj3r7qt" path="res://clock_prop.tscn" id="5_4g1t2"]
 [ext_resource type="Texture2D" uid="uid://bw4ju23y4k4ec" path="res://res/telescope.png" id="5_b4ms7"]
 [ext_resource type="Texture2D" uid="uid://dc6h37f2lmiyp" path="res://res/door.png" id="9_3hq2q"]
 [ext_resource type="Texture2D" uid="uid://cl2fr1a32fu12" path="res://res/WalkPadre.png" id="9_dkv7p"]
 [ext_resource type="Script" path="res://InPriestNode.gd" id="9_kokfk"]
+[ext_resource type="Texture2D" uid="uid://ucowm6jpxegw" path="res://res/background_open.png" id="10_koy5h"]
 [ext_resource type="Script" path="res://InPriestSp.gd" id="10_r2ote"]
 [ext_resource type="AudioStream" uid="uid://df33wbp46j33i" path="res://res/open.wav" id="12_4hyfx"]
 [ext_resource type="AudioStream" uid="uid://cpyajhjyvqvmv" path="res://res/Door Closing.wav" id="13_gg40j"]
+[ext_resource type="AudioStream" uid="uid://xe7djcw7uw2v" path="res://res/holy.wav" id="16_6igw6"]
 
 [sub_resource type="Animation" id="Animation_ihhdg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background:texture")
+tracks/0/path = NodePath("Door:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_xuda8")]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door:visible")
+tracks/1/path = NodePath("InPriestNode/InPriestSp:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("InPriestNode/InPriestSp:frame")
+tracks/2/path = NodePath("Background:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [ExtResource("2_xuda8")]
 }
 
 [sub_resource type="Animation" id="Animation_45qo5"]
@@ -59,26 +63,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background:texture")
+tracks/0/path = NodePath("Door:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_xuda8")]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door:visible")
+tracks/1/path = NodePath("Background:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [ExtResource("2_xuda8")]
 }
 
 [sub_resource type="Animation" id="Animation_2nrsb"]
@@ -87,26 +91,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Background:texture")
+tracks/0/path = NodePath("Door:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_cqo4m")]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Door:visible")
+tracks/1/path = NodePath("Background:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [ExtResource("10_koy5h")]
 }
 
 [sub_resource type="Animation" id="Animation_3td3a"]
@@ -160,6 +164,18 @@ z_index = -8
 scale = Vector2(5.01482, 5.01482)
 texture = ExtResource("2_xuda8")
 centered = false
+
+[node name="MoonProp" parent="." instance=ExtResource("3_ukjit")]
+position = Vector2(1136, 63)
+scale = Vector2(4.97, 4.97)
+
+[node name="Stars1Prop" parent="." instance=ExtResource("4_2ccfw")]
+position = Vector2(607, 325)
+scale = Vector2(4.845, 4.845)
+
+[node name="ClockProp" parent="." instance=ExtResource("5_4g1t2")]
+position = Vector2(243, 125)
+scale = Vector2(5.015, 5.015)
 
 [node name="Reza" type="Button" parent="."]
 offset_left = 634.0
@@ -225,7 +241,6 @@ vframes = 3
 script = ExtResource("10_r2ote")
 
 [node name="Timer" type="Timer" parent="InPriestNode"]
-wait_time = 2.0
 one_shot = true
 
 [node name="GameOverTimer" type="Timer" parent="InPriestNode"]
@@ -233,7 +248,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Pos1" type="Marker2D" parent="."]
-position = Vector2(392, 523)
+position = Vector2(290, 528)
 
 [node name="Pos2" type="Marker2D" parent="."]
 position = Vector2(103, 522)
@@ -244,6 +259,10 @@ volume_db = -1.553
 
 [node name="CloseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gg40j")
+
+[node name="PraySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_6igw6")
+volume_db = -12.854
 
 [connection signal="mouse_entered" from="Reza" to="." method="_on_reza_mouse_entered"]
 [connection signal="mouse_exited" from="Reza" to="." method="_on_reza_mouse_exited"]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1hjb6tsvohh2" path="res://res/cad4.png" id="1_nu4rd"]
 [ext_resource type="PackedScene" uid="uid://1xxvq7y5mt1e" path="res://check.tscn" id="3_bmltj"]
 
-[node name="Cad4" type="Node2D" groups=["notebook"]]
+[node name="Cad4" type="Node2D" groups=["notebook", "priest_listener"]]
 script = ExtResource("1_kaufw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

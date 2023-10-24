@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://cad.gd" id="1_k33hu"]
 [ext_resource type="PackedScene" uid="uid://1xxvq7y5mt1e" path="res://check.tscn" id="3_626vu"]
 
-[node name="Cad2" type="Node2D" groups=["notebook"]]
+[node name="Cad2" type="Node2D" groups=["notebook", "priest_listener"]]
 script = ExtResource("1_k33hu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://con7vbnex0n7y"]
+
+[ext_resource type="Script" path="res://moon_prop.gd" id="1_a5kvo"]
+[ext_resource type="Texture2D" uid="uid://c0s01tj8c6jcw" path="res://res/Moon-Sheet.png" id="1_yn08u"]
+
+[sub_resource type="Animation" id="Animation_mlf3y"]
+resource_name = "rotate"
+length = 6.4
+loop_mode = 1
+step = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2, 4, 4.8, 5.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_352yt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plw68"]
+_data = {
+"RESET": SubResource("Animation_352yt"),
+"rotate": SubResource("Animation_mlf3y")
+}
+
+[node name="MoonProp" type="Node2D"]
+script = ExtResource("1_a5kvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yn08u")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_plw68")
+}

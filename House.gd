@@ -8,6 +8,10 @@ extends Node2D
 @onready var inPriest = $InPriestNode
 @onready var doorSound = $DoorSound
 @onready var closeSound = $CloseSound
+@onready var praySound = $PraySound
+@onready var moon = $MoonProp
+@onready var stars = $Stars1Prop
+@onready var clock = $ClockProp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +25,11 @@ func _ready():
 	anim.play("closed")
 	if OutPriestState.priest_entering:
 		enter_priest()
+		moon.visible = false
+		stars.visible = false
+		clock.visible = false
+	anim.play("moon")
+	anim.play("stars1")
 
 func _physics_process(delta):
 	match galileo.state:
@@ -28,6 +37,7 @@ func _physics_process(delta):
 			galileo.walk_to_target(delta)
 			if galileo.is_on_target():
 				galileo.state = "praying"
+				praySound.play()
 		"walking_to_scope":
 			galileo.walk_to_target(delta)
 			if galileo.is_on_target():

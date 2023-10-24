@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nhylnvhh20vh" path="res://res/cad5.png" id="1_ftxki"]
 [ext_resource type="PackedScene" uid="uid://1xxvq7y5mt1e" path="res://check.tscn" id="2_ksl8e"]
 
-[node name="Cad5" type="Node2D" groups=["notebook"]]
+[node name="Cad5" type="Node2D" groups=["notebook", "priest_listener"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.25, 1.25)
