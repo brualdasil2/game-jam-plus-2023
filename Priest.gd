@@ -11,6 +11,8 @@ extends CharacterBody2D
 
 @export var MIN_MOVE_SPEED = 50.0
 @export var MAX_MOVE_SPEED = 300.0
+@export var MIN_STEPS_AUDIO_FREQ = 0.5
+@export var MAX_STEPS_AUDIO_FREQ = 1.5
 @export var MIN_TIMER = 1.0
 @export var MAX_TIMER = 3.0
 
@@ -105,6 +107,9 @@ func _physics_process(delta):
 func _process(delta):
 	pass
 
+func map_speed_to_pitch(speed : float) -> float:
+	return (((speed - MIN_MOVE_SPEED) / (MAX_MOVE_SPEED - MIN_MOVE_SPEED)) * (MAX_STEPS_AUDIO_FREQ - MIN_STEPS_AUDIO_FREQ)) + MIN_STEPS_AUDIO_FREQ
+
 func _on_timer_timeout():
 	print_debug("TIMER!")
 	moving = true
@@ -115,6 +120,8 @@ func _on_timer_timeout():
 	target_pos_numb = pos
 	print_debug("POS: " + str(pos))
 	if not paused:
+		walk.pitch_scale = map_speed_to_pitch(move_speed)
+		print_debug("speed: " + str(move_speed) + " -- pitch: " + str(walk.pitch_scale))
 		walk.play()
 	match pos:
 		1:
