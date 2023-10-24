@@ -25,9 +25,7 @@ func _ready():
 	anim.play("closed")
 	if OutPriestState.priest_entering:
 		enter_priest()
-		moon.visible = false
-		stars.visible = false
-		clock.visible = false
+	
 	anim.play("moon")
 	anim.play("stars1")
 

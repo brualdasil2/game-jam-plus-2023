@@ -114,7 +114,8 @@ func _on_timer_timeout():
 	print_debug("TIMER!")
 	moving = true
 	move_speed = randf_range(MIN_MOVE_SPEED, MAX_MOVE_SPEED)
-	var pos = randi_range(1, 5)
+	#var pos = randi_range(1, 5)
+	var pos = 5
 	while pos == target_pos_numb:
 		pos = randi_range(1, 5)
 	target_pos_numb = pos
