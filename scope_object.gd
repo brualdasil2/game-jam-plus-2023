@@ -13,7 +13,10 @@ var focus = 0
 signal hit_scope
 
 func random_focus() -> int:
-	return randi_range(ScopeState.MIN_FOCUS, ScopeState.MAX_FOCUS)
+	var rand_f = randi_range(ScopeState.MIN_FOCUS, ScopeState.MAX_FOCUS)
+	while rand_f == 0:
+		rand_f = randi_range(ScopeState.MIN_FOCUS, ScopeState.MAX_FOCUS)
+	return rand_f
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
