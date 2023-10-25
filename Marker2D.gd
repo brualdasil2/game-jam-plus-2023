@@ -106,6 +106,16 @@ func _process(delta):
 		find_charge = 0.0
 		charge_blocked = false
 	charge_progress.value = int(find_charge / FIND_TIME * 100)
+	
+	var scroll = 0
+	if Input.is_action_just_pressed("scroll_up"):
+		scroll = 1
+	elif Input.is_action_just_pressed("scroll_down"):
+		scroll = -1
+	if scroll != 0:
+		ScopeState.focus_value += scroll
+		ScopeState.focus_value = clamp(ScopeState.focus_value, ScopeState.MIN_FOCUS, ScopeState.MAX_FOCUS)
+		#print_debug("FOCUS:::: " + str(ScopeState.focus_value))
 		
 
 func center_mouse():

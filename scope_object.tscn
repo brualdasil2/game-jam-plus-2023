@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0pukiwyrlyr8"]
+[gd_scene load_steps=7 format=3 uid="uid://b0pukiwyrlyr8"]
 
 [ext_resource type="Script" path="res://scope_object.gd" id="1_0mnv8"]
+[ext_resource type="Shader" path="res://focus_blur.gdshader" id="1_m63k7"]
 [ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="1_yus6r"]
 [ext_resource type="Script" path="res://ObjectArea.gd" id="3_ktveh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36iad"]
+resource_local_to_scene = true
+shader = ExtResource("1_m63k7")
+shader_parameter/blur_strength = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a6co3"]
 radius = 7.42847
 
 [node name="ScopeObject" type="Sprite2D"]
+material = SubResource("ShaderMaterial_36iad")
 texture = ExtResource("1_yus6r")
 script = ExtResource("1_0mnv8")
 
