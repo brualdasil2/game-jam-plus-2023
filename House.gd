@@ -26,8 +26,6 @@ func _ready():
 	if OutPriestState.priest_entering:
 		enter_priest()
 	
-	anim.play("moon")
-	anim.play("stars1")
 
 func _physics_process(delta):
 	match galileo.state:

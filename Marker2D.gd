@@ -55,7 +55,6 @@ func go_to_house(cause):
 	if cause == "priest":
 		OutPriestState.priest_entering = true
 	get_parent().get_parent().load_house()
-	#get_tree().change_scene_to_file("res://House.tscn")
 	
 	
 func reset_charge():
@@ -72,7 +71,7 @@ func charge_find(delta):
 		erradoSound.play()
 		reset_charge()
 		return
-	# TODO: test curr round
+
 	var mission_id = curr_area.mission_id
 	var mission_round = curr_area.round
 	var mission_rounds_dict = Missions.missions_status[Missions.curr_round]
@@ -88,11 +87,15 @@ func charge_find(delta):
 		erradoSound.play()
 		reset_charge()
 		return
+	if ScopeState.focus_value != curr_area.focus and curr_area.focus != 0:
+		erradoSound.play()
+		reset_charge()
+		return
 	Missions.missions_status[Missions.curr_round][mission_id] = true
-	print_debug("FOUND PLANET " + str(curr_area.mission_id))
+	#print_debug("FOUND PLANET " + str(curr_area.mission_id))
 	certoSound.play()
 	if Missions.all_round_missions_done():
-		print_debug("ROUND DONE!")
+		#print_debug("ROUND DONE!")
 		Missions.curr_round += 1
 		go_to_house("left")
 	reset_charge()
@@ -115,7 +118,6 @@ func _process(delta):
 	if scroll != 0:
 		ScopeState.focus_value += scroll
 		ScopeState.focus_value = clamp(ScopeState.focus_value, ScopeState.MIN_FOCUS, ScopeState.MAX_FOCUS)
-		#print_debug("FOCUS:::: " + str(ScopeState.focus_value))
 		
 
 func center_mouse():

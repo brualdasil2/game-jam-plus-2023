@@ -5,3 +5,5 @@ var initialized : bool = false
 var focus_value : int = 0
 const MIN_FOCUS = -20
 const MAX_FOCUS = 20
+
+var focus_values : Dictionary
