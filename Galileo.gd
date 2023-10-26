@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name Galileo
 
-@export var WALK_SPEED : float = 250.0
+@export var WALK_SPEED : float = 125.0
 
 @onready var anim = $AnimationPlayer
 
@@ -11,7 +11,7 @@ var frozen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	anim.speed_scale = 0.5
 
 func walk_to_target(delta):
 	if frozen:

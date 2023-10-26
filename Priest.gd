@@ -9,8 +9,8 @@ extends CharacterBody2D
 @onready var knock = $"../KnockSound"
 @onready var walk = $WalkSound
 
-@export var MIN_MOVE_SPEED = 50.0
-@export var MAX_MOVE_SPEED = 300.0
+@export var MIN_MOVE_SPEED = 25.0
+@export var MAX_MOVE_SPEED = 150.0
 @export var MIN_STEPS_AUDIO_FREQ = 0.5
 @export var MAX_STEPS_AUDIO_FREQ = 1.5
 @export var MIN_TIMER = 1.0

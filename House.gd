@@ -26,6 +26,7 @@ func _ready():
 	if OutPriestState.priest_entering:
 		enter_priest()
 	
+	anim.speed_scale = 0.5
 
 func _physics_process(delta):
 	match galileo.state:

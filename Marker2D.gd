@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var MOUSE_SPEED = 2000
-@export var MOUSE_ACCEL = 50
+@export var MOUSE_SPEED = 1000
+@export var MOUSE_ACCEL = 15
 @export var MOUSE_FRICTION = 200
 @export var MOUSE_THRESHOLD = 1
 
-@export var FIND_TIME = 1.0
+@export var FIND_TIME = 2.0
 
 @onready var charge_progress = $Node2D/TextureProgressBar
 @onready var certoSound = $Certosound
