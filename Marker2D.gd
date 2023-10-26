@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var MOUSE_SPEED = 1000
 @export var MOUSE_ACCEL = 15
-@export var MOUSE_FRICTION = 200
+@export var MOUSE_FRICTION = 150
 @export var MOUSE_THRESHOLD = 1
 
 @export var FIND_TIME = 2.0
@@ -20,7 +20,8 @@ var curr_area : ScopeObject
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	center_mouse()
 	prev_mouse_pos = get_mouse_pos()
 	if ScopeState.initialized:
@@ -29,6 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	print_debug("BEGG: " + str(get_mouse_pos()))
 	if tpd:
 		prev_mouse_pos = get_mouse_pos()
 		tpd = false
@@ -41,10 +43,12 @@ func _physics_process(delta):
 		velocity = velocity.normalized() * MOUSE_SPEED
 
 	pos_tests(delta)
+	print_debug("MID: " + str(get_mouse_pos()))
 	if find_charge == 0.0:
 		move_and_slide()
 
 	prev_mouse_pos = mouse_pos
+	print_debug("END: " + str(get_mouse_pos()))
 
 func save_state():
 	ScopeState.scope_position = global_position
@@ -54,6 +58,8 @@ func go_to_house(cause):
 	save_state()
 	if cause == "priest":
 		OutPriestState.priest_entering = true
+	elif cause == "missions":
+		HouseState.just_completed_page = true
 	get_parent().get_parent().load_house()
 	
 	
@@ -92,13 +98,9 @@ func charge_find(delta):
 		reset_charge()
 		return
 	Missions.missions_status[Missions.curr_round][mission_id] = true
-	#print_debug("FOUND PLANET " + str(curr_area.mission_id))
 	certoSound.play()
-	if Missions.all_round_missions_done():
-		#print_debug("ROUND DONE!")
-		Missions.curr_round += 1
-		go_to_house("left")
 	reset_charge()
+	
 	
 func _process(delta):
 	if Input.is_action_just_pressed("right_click"):
@@ -125,13 +127,13 @@ func center_mouse():
 	tpd = true
 
 func get_mouse_pos() -> Vector2:
-	#return get_local_mouse_position()
 	return get_global_mouse_position() - global_position
 
 func pos_tests(delta):
+	return
 	var mouse_pos = get_mouse_pos()
 	var new_vec
-	if mouse_pos.length()> 200:
+	if mouse_pos.length() > 300:
 		new_vec = (mouse_pos-prev_mouse_pos)
 		velocity += MOUSE_ACCEL * delta * new_vec
 		center_mouse()
@@ -155,3 +157,9 @@ func _on_crosshair_area_area_exited(area):
 
 func _on_out_priest_in_door():
 	go_to_house("priest")
+
+
+func _on_certosound_finished():
+	if Missions.all_round_missions_done():
+		Missions.curr_round += 1
+		go_to_house("missions")

@@ -12,11 +12,11 @@ extends Node2D
 @onready var moon = $MoonProp
 @onready var stars = $Stars1Prop
 @onready var clock = $ClockProp
+@onready var arrow = $NotebookArrow
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if HouseState.initialized:
-		print_debug("INIT ROLANDO")
 		galileo.global_position = HouseState.galileo_pos
 		galileo.flip_h = HouseState.galileo_flipped
 	if Missions.curr_round == 6:
@@ -25,7 +25,8 @@ func _ready():
 	anim.play("closed")
 	if OutPriestState.priest_entering:
 		enter_priest()
-	
+		
+	arrow.visible = HouseState.just_completed_page
 	anim.speed_scale = 0.5
 
 func _physics_process(delta):
@@ -56,6 +57,8 @@ func save_state():
 	HouseState.initialized = true
 
 func open_notebook():
+	HouseState.just_completed_page = false
+	arrow.visible = false
 	save_state()
 	get_parent().load_notebook()
 				
