@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var MOUSE_SPEED = 1000
-@export var MOUSE_ACCEL = 15
-@export var MOUSE_FRICTION = 150
-@export var MOUSE_THRESHOLD = 1
+@export var MAX_SPEED = 1000
+@export var LINEAR_SPEED = 100
+@export var ACCELERATION = 10
+@export var FRICTION = 300
 
 @export var FIND_TIME = 2.0
 
@@ -11,44 +11,55 @@ extends CharacterBody2D
 @onready var certoSound = $Certosound
 @onready var erradoSound = $ErradoSound
 
-var prev_mouse_pos : Vector2 = Vector2.ZERO
-var tpd : bool = false
 var find_charge = 0.0
 var charge_blocked = false
 
 var curr_area : ScopeObject
 
+var acc_mouse_direction : Vector2 = Vector2.ZERO
+var var_speed : Vector2 = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	center_mouse()
-	prev_mouse_pos = get_mouse_pos()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.use_accumulated_input = false
+	#center_mouse()
+	#prev_mouse_pos = get_mouse_pos()
 	if ScopeState.initialized:
 		global_position = ScopeState.scope_position
 
 
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		acc_mouse_direction += event.relative
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print_debug("BEGG: " + str(get_mouse_pos()))
-	if tpd:
-		prev_mouse_pos = get_mouse_pos()
-		tpd = false
-	var mouse_pos : Vector2 = get_mouse_pos()
-	var mouse_direction : Vector2 = mouse_pos - prev_mouse_pos
-	velocity += MOUSE_ACCEL * delta * mouse_direction
+	var mouse_direction : Vector2 = acc_mouse_direction
+	
+	# linear speed component
+	var linear_speed : Vector2 = mouse_direction * delta * LINEAR_SPEED
+	
+	# variable speed component (acceleration)
+	var_speed += mouse_direction * delta * ACCELERATION
+	
+	# friction
 	var op_dir : Vector2 = velocity.normalized() * -1
-	velocity += MOUSE_FRICTION * delta * op_dir
-	if velocity.length() > MOUSE_SPEED:
-		velocity = velocity.normalized() * MOUSE_SPEED
+	if find_charge == 0.0:
+		var_speed += FRICTION * delta * op_dir
+	
+	velocity = linear_speed + var_speed
+	
+	# speed cap
+	if velocity.length() > MAX_SPEED:
+		velocity = velocity.normalized() * MAX_SPEED
 
-	pos_tests(delta)
-	print_debug("MID: " + str(get_mouse_pos()))
 	if find_charge == 0.0:
 		move_and_slide()
-
-	prev_mouse_pos = mouse_pos
-	print_debug("END: " + str(get_mouse_pos()))
+	
+	acc_mouse_direction = Vector2.ZERO
 
 func save_state():
 	ScopeState.scope_position = global_position
@@ -123,25 +134,20 @@ func _process(delta):
 		
 
 func center_mouse():
-	Input.warp_mouse(get_viewport_rect().size / 2)
-	tpd = true
+	#get_viewport().
+	#Input.warp_mouse(get_viewport_rect().size / 2)
+	# Get the current size of the viewport
+	var viewport_size = get_viewport_rect().size
+
+	# Calculate the center position
+	var center_position = viewport_size / 2
+
+	# Set the mouse cursor position to the center
+	#OS.set_mouse_position(center_position)
 
 func get_mouse_pos() -> Vector2:
 	return get_global_mouse_position() - global_position
 
-func pos_tests(delta):
-	return
-	var mouse_pos = get_mouse_pos()
-	var new_vec
-	if mouse_pos.length() > 300:
-		new_vec = (mouse_pos-prev_mouse_pos)
-		velocity += MOUSE_ACCEL * delta * new_vec
-		center_mouse()
-
-func _on_mouse_cage_mouse_shape_exited(shape_idx):
-	prev_mouse_pos = get_viewport_rect().size/2
-	center_mouse()
-	tpd = true
 
 
 func _on_crosshair_area_area_entered(area):

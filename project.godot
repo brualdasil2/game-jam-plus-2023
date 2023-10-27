@@ -23,11 +23,14 @@ ScopeState="*res://ScopeState.gd"
 Missions="*res://Missions.gd"
 OutPriestState="*res://OutPriestState.gd"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/viewport_width=1200
 window/size/viewport_height=675
-window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]
@@ -55,7 +58,8 @@ scroll_down={
 
 [physics]
 
-common/physics_ticks_per_second=1
+common/max_physics_steps_per_frame=16
+2d/default_gravity=0.0
 
 [rendering]
 

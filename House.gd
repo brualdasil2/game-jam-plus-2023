@@ -21,7 +21,7 @@ func _ready():
 		galileo.flip_h = HouseState.galileo_flipped
 	if Missions.curr_round == 6:
 		get_tree().change_scene_to_file("res://win.tscn")
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	anim.play("closed")
 	if OutPriestState.priest_entering:
 		enter_priest()
