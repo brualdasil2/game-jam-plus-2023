@@ -50,7 +50,8 @@ func _physics_process(delta):
 	if find_charge == 0.0:
 		var_speed += FRICTION * delta * op_dir
 	
-	velocity = linear_speed + var_speed
+	#velocity = linear_speed + var_speed
+	velocity = var_speed
 	
 	# speed cap
 	if velocity.length() > MAX_SPEED:
@@ -114,6 +115,8 @@ func charge_find(delta):
 	
 	
 func _process(delta):
+	if velocity.length() == MAX_SPEED:
+		print_debug("MAX SPEEEEEEEEDDDD")
 	if Input.is_action_just_pressed("right_click"):
 		go_to_house("left")
 	elif Input.is_action_pressed("left_click"):
