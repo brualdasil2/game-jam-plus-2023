@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name Galileo
 
-@export var WALK_SPEED : float = 125.0
+@export var WALK_SPEED : float = 115.0
 
 @onready var anim = $AnimationPlayer
 

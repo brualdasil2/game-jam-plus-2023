@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjqb2vnwcqf3c"]
 
 [ext_resource type="Script" path="res://notebook_arrow.gd" id="1_7h3ts"]
-[ext_resource type="Texture2D" uid="uid://cgk4wyod8i0bw" path="res://icon.svg" id="1_q5xb0"]
+[ext_resource type="Texture2D" uid="uid://b4x5iv3d2gaqk" path="res://res/seta.png" id="2_fqh6w"]
 
 [sub_resource type="Animation" id="Animation_klukv"]
 length = 0.001
@@ -44,7 +44,8 @@ _data = {
 script = ExtResource("1_7h3ts")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_q5xb0")
+scale = Vector2(1.65625, 1.65625)
+texture = ExtResource("2_fqh6w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

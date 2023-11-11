@@ -162,7 +162,7 @@ script = ExtResource("1_c4gxq")
 
 [node name="NotebookArrow" parent="." instance=ExtResource("2_j6tr6")]
 z_index = 50
-position = Vector2(240, 246)
+position = Vector2(240, 274)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -8
