@@ -41,12 +41,12 @@
 [ext_resource type="PackedScene" uid="uid://bd4ahog6f8pqf" path="res://small_light.tscn" id="37_esx6u"]
 [ext_resource type="PackedScene" uid="uid://345ggi4y82ro" path="res://light.tscn" id="39_k38e5"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4pxe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pe7uw"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8n3ab"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8gq1w"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -54,7 +54,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccxcv"]
 radius = 8.01776
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tigwv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlulu"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -62,7 +62,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsxhr"]
 radius = 6.50123
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k22o1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0kqsw"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -102,7 +102,7 @@ radius = 39.9914
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxdxf"]
 radius = 71.696
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jbe8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5jsl"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -110,12 +110,12 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kefvf"]
 radius = 8.21327
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyjmn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yflvm"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ajx3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxxps"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -123,12 +123,12 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_revph"]
 radius = 14.24
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx2dh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ooqli"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwc6l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vi13f"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -136,7 +136,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh87k"]
 radius = 6.45617
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_61d6k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhdxk"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -144,12 +144,12 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ycs6i"]
 radius = 8.08634
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1hay"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cifc5"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcont"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48v8x"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -157,42 +157,42 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_njx8p"]
 radius = 6.15364
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6eaj7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svqbf"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2t7cw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7os0x"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1dox"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qwht5"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpldb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b4285"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlx5s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ft7"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1l2r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77fvu"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pk04"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74r28"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lplce"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4hl7"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -200,7 +200,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_04olu"]
 radius = 5.63855
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6x7y3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8t56a"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -208,7 +208,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_848fu"]
 radius = 7.03635
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n6cas"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84tub"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -216,7 +216,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2tw2n"]
 radius = 6.67246
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_83xfu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5tmx"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -224,7 +224,7 @@ shader_parameter/blur_strength = 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6hjo3"]
 radius = 6.42358
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdgc3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3j5ly"]
 resource_local_to_scene = true
 shader = ExtResource("3_db1mq")
 shader_parameter/blur_strength = 0
@@ -278,7 +278,7 @@ script = ExtResource("1_7e5f4")
 [node name="Planets" type="Node2D" parent="."]
 
 [node name="Yellow Moon" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_h4pxe")
+material = SubResource("ShaderMaterial_pe7uw")
 position = Vector2(-119, -1315)
 scale = Vector2(24.7656, 24.7656)
 texture = ExtResource("3_ade04")
@@ -288,7 +288,7 @@ metadata/_edit_group_ = true
 metadata/_edit_group_ = true
 
 [node name="White Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_8n3ab")
+material = SubResource("ShaderMaterial_8gq1w")
 position = Vector2(1196, 31)
 scale = Vector2(14.3125, 14.3125)
 texture = ExtResource("4_uvwwy")
@@ -300,7 +300,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ccxcv")
 
 [node name="Moon" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_tigwv")
+material = SubResource("ShaderMaterial_dlulu")
 position = Vector2(-434, 898)
 scale = Vector2(35.5625, 35.5625)
 texture = ExtResource("7_pe06s")
@@ -314,7 +314,7 @@ scale = Vector2(-1.13413, 1.12945)
 shape = SubResource("CircleShape2D_wsxhr")
 
 [node name="jupiter" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_k22o1")
+material = SubResource("ShaderMaterial_0kqsw")
 position = Vector2(3775.5, 1652.2)
 scale = Vector2(25.4062, 24.4561)
 texture = ExtResource("6_afgq7")
@@ -1006,7 +1006,7 @@ position = Vector2(25.0732, -13.8833)
 position = Vector2(24.1432, -12.0147)
 
 [node name="Via Leite" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_6jbe8")
+material = SubResource("ShaderMaterial_b5jsl")
 position = Vector2(3389, -2183)
 scale = Vector2(36.7422, 36.7422)
 texture = ExtResource("6_vyors")
@@ -1021,7 +1021,7 @@ scale = Vector2(-1.51163, 0.910852)
 shape = SubResource("CircleShape2D_kefvf")
 
 [node name="Venus" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_pyjmn")
+material = SubResource("ShaderMaterial_yflvm")
 position = Vector2(1246, 3066)
 scale = Vector2(34.3438, 34.3438)
 texture = ExtResource("7_uc4xc")
@@ -1035,7 +1035,7 @@ scale = Vector2(-1.13413, 1.12945)
 shape = SubResource("CircleShape2D_wsxhr")
 
 [node name="Saturn" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_3ajx3")
+material = SubResource("ShaderMaterial_rxxps")
 position = Vector2(-2061, 1891)
 scale = Vector2(30.5469, 21.0614)
 texture = ExtResource("8_ff1nh")
@@ -1050,7 +1050,7 @@ scale = Vector2(-0.469768, 1.25794)
 shape = SubResource("CircleShape2D_revph")
 
 [node name="Blue Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_fx2dh")
+material = SubResource("ShaderMaterial_ooqli")
 position = Vector2(1616.5, 1056.5)
 scale = Vector2(9.4375, 9.9375)
 texture = ExtResource("6_vvl1x")
@@ -1058,7 +1058,7 @@ mission_id = 4
 round = 4
 
 [node name="Yello Asteroid" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_hwc6l")
+material = SubResource("ShaderMaterial_vi13f")
 position = Vector2(-2224, -496)
 scale = Vector2(18, 18)
 texture = ExtResource("10_afwr4")
@@ -1071,7 +1071,7 @@ position = Vector2(0.555557, -0.222223)
 shape = SubResource("CircleShape2D_kh87k")
 
 [node name="Pink Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_61d6k")
+material = SubResource("ShaderMaterial_dhdxk")
 position = Vector2(-2061, 66)
 scale = Vector2(18, 18)
 texture = ExtResource("11_24t37")
@@ -1083,7 +1083,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Rocky Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_l1hay")
+material = SubResource("ShaderMaterial_cifc5")
 position = Vector2(-1684, 1162)
 scale = Vector2(18, 18)
 texture = ExtResource("12_gkk43")
@@ -1095,7 +1095,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Chesse Moon" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_hcont")
+material = SubResource("ShaderMaterial_48v8x")
 position = Vector2(-1315, -1129)
 scale = Vector2(23.625, 23.625)
 texture = ExtResource("13_6hags")
@@ -1106,7 +1106,7 @@ position = Vector2(-0.611115, 1.38889)
 shape = SubResource("CircleShape2D_njx8p")
 
 [node name="Basic Asteroid" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_6eaj7")
+material = SubResource("ShaderMaterial_svqbf")
 position = Vector2(2896, 1367)
 scale = Vector2(18.375, 18.375)
 texture = ExtResource("14_1bcrm")
@@ -1116,7 +1116,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Basic Asteroid2" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_2t7cw")
+material = SubResource("ShaderMaterial_7os0x")
 position = Vector2(-1477, 2266)
 scale = Vector2(18.375, 18.375)
 texture = ExtResource("14_1bcrm")
@@ -1126,7 +1126,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Basic Asteroid3" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_g1dox")
+material = SubResource("ShaderMaterial_qwht5")
 position = Vector2(2533, -1474)
 scale = Vector2(18.375, 18.375)
 texture = ExtResource("14_1bcrm")
@@ -1136,7 +1136,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Orange Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_xpldb")
+material = SubResource("ShaderMaterial_b4285")
 position = Vector2(-435, 1736)
 scale = Vector2(14.875, 15.3125)
 texture = ExtResource("15_a46nv")
@@ -1148,7 +1148,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Big Blue" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_dlx5s")
+material = SubResource("ShaderMaterial_v3ft7")
 position = Vector2(881, 2433)
 scale = Vector2(24.0313, 24.0313)
 texture = ExtResource("16_x018h")
@@ -1160,7 +1160,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Green Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_a1l2r")
+material = SubResource("ShaderMaterial_77fvu")
 position = Vector2(1452, 2042)
 scale = Vector2(13.9375, 13.9375)
 texture = ExtResource("17_108ma")
@@ -1172,7 +1172,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Gray Planet" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_2pk04")
+material = SubResource("ShaderMaterial_74r28")
 position = Vector2(2512, 2872)
 scale = Vector2(18, 18)
 texture = ExtResource("18_wicy7")
@@ -1184,7 +1184,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_ycs6i")
 
 [node name="Blue Asteroid" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_lplce")
+material = SubResource("ShaderMaterial_v4hl7")
 position = Vector2(2543, 1874)
 scale = Vector2(18, 18)
 texture = ExtResource("19_j7wcr")
@@ -1195,7 +1195,7 @@ position = Vector2(0.444443, 0.111107)
 shape = SubResource("CircleShape2D_04olu")
 
 [node name="Green Asteroid" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_6x7y3")
+material = SubResource("ShaderMaterial_8t56a")
 position = Vector2(3829, 353)
 scale = Vector2(15.375, 14.625)
 texture = ExtResource("20_oftmi")
@@ -1207,7 +1207,7 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_848fu")
 
 [node name="Greener Asteroid2" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_n6cas")
+material = SubResource("ShaderMaterial_84tub")
 position = Vector2(3250, -956)
 scale = Vector2(18, 18)
 texture = ExtResource("21_iigka")
@@ -1220,7 +1220,7 @@ position = Vector2(0.888901, 0)
 shape = SubResource("CircleShape2D_2tw2n")
 
 [node name="Pink Asteroid" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_83xfu")
+material = SubResource("ShaderMaterial_e5tmx")
 position = Vector2(631, -771)
 scale = Vector2(21.375, 21.375)
 texture = ExtResource("22_d05ov")
@@ -1233,7 +1233,7 @@ position = Vector2(0.555556, 0.166672)
 shape = SubResource("CircleShape2D_6hjo3")
 
 [node name="Planet Moon" parent="Planets" instance=ExtResource("3_hwrwc")]
-material = SubResource("ShaderMaterial_jdgc3")
+material = SubResource("ShaderMaterial_3j5ly")
 position = Vector2(1255, -1759)
 scale = Vector2(34.4688, 34.4688)
 texture = ExtResource("23_3unkf")
