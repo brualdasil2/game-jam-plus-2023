@@ -17,6 +17,7 @@ z_as_relative = false
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-0.457346, -0.450455)
 scale = Vector2(0.183595, 0.183595)
+range_z_max = 90
 range_layer_min = -100
 range_layer_max = 100
 texture = SubResource("GradientTexture2D_2kmhr")
